@@ -5,6 +5,7 @@
 2. start xamp server
 
 3. run:
+    <br>
     composer update
     <br>
     php artisan migrate:fresh --seed
