@@ -1,0 +1,103 @@
+{
+	"info": {
+		"_postman_id": "06e45bd0-45b8-48ec-bc4a-345826308e90",
+		"name": "Service Providers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16038056"
+	},
+	"item": [
+		{
+			"name": "service-providers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/service-providers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"service-providers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store service-providers by Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "1|n86x7ivZXMNiF4rt0EiVSCyPGjHT4vqVUXCpWJHh",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "about",
+							"value": "sdf",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "dfsdf",
+							"type": "text"
+						},
+						{
+							"key": "service_locations",
+							"value": "dsfsdf",
+							"type": "text"
+						},
+						{
+							"key": "user_id",
+							"value": "3",
+							"type": "text"
+						},
+						{
+							"key": "service_category_id",
+							"value": "1",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/User/Downloads/1443992.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/service-providers",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"service-providers"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

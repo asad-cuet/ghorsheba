@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "07ca9590-a1fd-4f3d-bb9a-a28e57bf861b",
+		"name": "Service Provider User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16038056"
+	},
+	"item": [
+		{
+			"name": "Service Provider",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/users?utype=SVP",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					],
+					"query": [
+						{
+							"key": "utype",
+							"value": "SVP"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

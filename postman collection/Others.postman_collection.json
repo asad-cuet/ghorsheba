@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "963ba758-4c3a-44d6-8760-70ecfb5878d6",
+		"name": "Others",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16038056"
+	},
+	"item": [
+		{
+			"name": "orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/orders",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"orders"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store orders",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/orders?total_bill=434&book_type=1&user_id=2&service_id=1&transiction_id=435234&to_provider_id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "total_bill",
+							"value": "434"
+						},
+						{
+							"key": "book_type",
+							"value": "1"
+						},
+						{
+							"key": "user_id",
+							"value": "2"
+						},
+						{
+							"key": "service_id",
+							"value": "1"
+						},
+						{
+							"key": "transiction_id",
+							"value": "435234"
+						},
+						{
+							"key": "to_provider_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

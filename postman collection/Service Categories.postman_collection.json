@@ -1,0 +1,113 @@
+{
+	"info": {
+		"_postman_id": "0c63674b-9827-47ad-b569-6308c1bc8951",
+		"name": "Service Categories",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16038056"
+	},
+	"item": [
+		{
+			"name": "service-categories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/service-categories",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"service-categories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Store service-categories by admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|70K9PtM9LKoQ3yBmACAx5WNbhOD7qUP0VxQUdrCE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "name",
+							"value": "sdfg",
+							"type": "text"
+						},
+						{
+							"key": "price",
+							"value": "342",
+							"type": "text"
+						},
+						{
+							"key": "slug",
+							"value": "sfd",
+							"type": "text"
+						},
+						{
+							"key": "discount",
+							"value": "10",
+							"type": "text"
+						},
+						{
+							"key": "total",
+							"value": "100",
+							"type": "text"
+						},
+						{
+							"key": "description",
+							"value": "sdfgsadf",
+							"type": "text"
+						},
+						{
+							"key": "image",
+							"type": "file",
+							"src": "/C:/Users/User/Downloads/git.png"
+						},
+						{
+							"key": "coverimage",
+							"type": "file",
+							"src": "/C:/Users/User/Downloads/ml.png"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/service-categories",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"service-categories"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

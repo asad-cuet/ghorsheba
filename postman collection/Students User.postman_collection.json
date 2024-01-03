@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "42988188-9dac-48e0-b7f4-52e976a4c9bd",
+		"name": "Students User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16038056"
+	},
+	"item": [
+		{
+			"name": "Students",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/users?utype=CST",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"users"
+					],
+					"query": [
+						{
+							"key": "utype",
+							"value": "CST"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,243 @@
+{
+	"info": {
+		"_postman_id": "e53a8207-2804-4bb8-a954-1415908b8abe",
+		"name": "Authentication",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16038056"
+	},
+	"item": [
+		{
+			"name": "Signin",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/password-signin?email=admin@gmail.com&password=password",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"password-signin"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "admin@gmail.com"
+						},
+						{
+							"key": "password",
+							"value": "password"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Student Registration by Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|1A5v70gzUf4mKFwFIrcil0PCV3kTHBrURkIEzJ1v",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/password-signup?email=asadul77333@gmail.com&name=Asad&password=password&utype=CST",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"password-signup"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "asadul77333@gmail.com"
+						},
+						{
+							"key": "name",
+							"value": "Asad"
+						},
+						{
+							"key": "password",
+							"value": "password"
+						},
+						{
+							"key": "utype",
+							"value": "CST"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Service Provider Registration by Admin",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "3|1A5v70gzUf4mKFwFIrcil0PCV3kTHBrURkIEzJ1v",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/password-signup?email=asadul@gmail.com&name=Asad&password=password&utype=SVP",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"password-signup"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "asadul@gmail.com"
+						},
+						{
+							"key": "name",
+							"value": "Asad"
+						},
+						{
+							"key": "password",
+							"value": "password"
+						},
+						{
+							"key": "utype",
+							"value": "SVP"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "2|70K9PtM9LKoQ3yBmACAx5WNbhOD7qUP0VxQUdrCE",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "10|6Ij8DzeCR9EozMxAvwwrmHqkQY9cwHXbskm1WRtH",
+						"type": "text"
+					},
+					{
+						"key": "token_type",
+						"value": "Bearer",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/user",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Signout",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "28|3LDCTiPHF3r2OuWxQI9MteStMltDy8i8H19IbPb1",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "access_token",
+						"value": "10|6Ij8DzeCR9EozMxAvwwrmHqkQY9cwHXbskm1WRtH",
+						"type": "text"
+					},
+					{
+						"key": "token_type",
+						"value": "Bearer",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://127.0.0.1:8000/api/v1/auth/signout",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"auth",
+						"signout"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
