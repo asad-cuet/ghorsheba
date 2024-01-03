@@ -6,6 +6,7 @@
 
 3. run:
     composer update
+    <br>
     php artisan migrate:fresh --seed
 
 4. create a database named ghorsheba (if not created)
