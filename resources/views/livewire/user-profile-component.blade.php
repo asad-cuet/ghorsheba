@@ -41,11 +41,22 @@
                                               @endif
                                           </div>
                                           <div class="col-md-8">
+                                            @if(Auth::user()->utype==='ADM')
+                                                <h3>Name: {{$user->name}}</h3>
+                                                <p><b>Email: </b>{{$user->email}}</p>
+                                                <p><b>Phone: </b>{{$user->phone}}</p>
+                                                <a href="{{route('user.editprofile')}}" class="btn btn-info pull-right">Update Profile</a>
+                                            @elseif(Auth::user()->utype==='SPV')
+                                                <h3>Name: {{$user->name}}</h3>
+                                                <p><b>Email: </b>{{$user->email}}</p>
+                                                <p><b>Phone: </b>{{$user->phone}}</p>
+                                            @else
                                                <h3>Name: {{$user->name}}</h3>
                                                <p><b>Email: </b>{{$user->email}}</p>
                                                <p><b>Student Id: </b>{{$user->sudent_id}}</p>
                                                <p><b>Phone: </b>{{$user->phone}}</p>
                                                <p><b>Room No: </b>{{$user->room_no}}</p>
+                                            @endif
                                           </div>
                                       </div>
                                    </div>
