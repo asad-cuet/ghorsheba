@@ -37,31 +37,6 @@
                     <li class="title">
                         <a href="{{route('home')}}"><img src="{{asset('assets/images/logo.png')}}"></a>
                     </li>
-                    <li> <a href="{{route('home.service_categories')}}">Service Categories</a>
-                    <li> <a href="javascript:void(0);">Air Conditioners</a>
-                        <ul class="drop-down one-column hover-fade">
-                            <li><a href="/service-category-view/ac-installation">Installation</a></li>
-                            <li><a href="/service-category-view/ac-uninstallation">Uninstallation</a></li>
-                            <li><a href="/service-category-view/ac-repair">Repair</a></li>
-                        </ul>
-                    </li>
-                    <li> <a href="#">Home Needs</a>
-                        <ul class="drop-down one-column hover-fade">
-                            <li><a href="/service-category-view/laundry">Laundry</a></li>
-                            <li><a href="/service-category-view/electrical">Electrical</a></li>
-                            <li><a href="/service-category-view/plumbing">Plumbing </a></li>
-                            <li><a href="/service-category-view/painting">Painting</a></li>
-                            <li><a href="/service-category-view/house-shifting">House Shifting </a></li>
-                        </ul>
-                    </li>
-                    <li> <a href="#">Home Cleaning</a>
-                        <ul class="drop-down one-column hover-fade">
-                            <li><a href="/service-category-view/tank-cleaning">Tank Cleaning</a></li>
-                            <li><a href="/service-category-view/furniture">Furniture </a></li>
-                            <li><a href="/service-category-view/home-deep-cleaning">Home Deep Cleaning </a></li>
-                            <li><a href="/service-category-view/bathroom-deep-cleaning">Bathroom Deep Cleaning</a></li>
-                        </ul>
-                    </li>
                     @if(Route::has('login'))
                         @auth
                             @if(Auth::user()->utype==='ADM')
