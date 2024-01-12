@@ -43,9 +43,9 @@
                                           <div class="col-md-8">
                                                <h3>Name: {{$user->name}}</h3>
                                                <p><b>Email: </b>{{$user->email}}</p>
+                                               <p><b>Student Id: </b>{{$user->sudent_id}}</p>
                                                <p><b>Phone: </b>{{$user->phone}}</p>
-                                               <p><b>Address: </b>{{$user->profile->address}}</p>
-                                               <a href="{{route('user.editprofile')}}" class="btn btn-info pull-right">Update Profile</a>
+                                               <p><b>Room No: </b>{{$user->room_no}}</p>
                                           </div>
                                       </div>
                                    </div>
