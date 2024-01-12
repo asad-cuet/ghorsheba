@@ -6,6 +6,7 @@ use Livewire\Component;
 
 class HomeComponent extends Component
 {
+    //
     public function render()
     {
         $fscategories = ServiceCategory::where('featured',1)->take(8)->get();
