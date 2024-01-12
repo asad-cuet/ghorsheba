@@ -128,3 +128,8 @@ function studentsQuery()
 {
     return User::where('utype','CST');
 }
+
+function spvQuery()
+{
+    return User::where('utype','SVP');
+}

@@ -26,6 +26,7 @@ use App\Http\Livewire\UserProfileComponent;
 use App\Http\Livewire\Sprovider\EditSproviderProfileComponent;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminStudentController;
+use App\Http\Controllers\AdminSVPController;
 // use App\Http\Controllers\RegistrationController;
 
 /*
@@ -107,4 +108,11 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified', '
     Route::get('/admin/students/edit/{id}',[AdminStudentController::class,'edit'])->name('admin.students.edit');
     Route::post('/admin/students/store/{id}',[AdminStudentController::class,'update'])->name('admin.students.update');
     Route::get('/admin/students/destroy/{id}',[AdminStudentController::class,'destroy'])->name('admin.students.destroy');
+
+    Route::get('/admin/service-providers',[AdminSVPController::class,'index'])->name('admin.service-providers');
+    Route::get('/admin/service-providers/create',[AdminSVPController::class,'create'])->name('admin.service-providers.create');
+    Route::post('/admin/service-providers/store',[AdminSVPController::class,'store'])->name('admin.service-providers.store');
+    Route::get('/admin/service-providers/edit/{id}',[AdminSVPController::class,'edit'])->name('admin.service-providers.edit');
+    Route::post('/admin/service-providers/store/{id}',[AdminSVPController::class,'update'])->name('admin.service-providers.update');
+    Route::get('/admin/service-providers/destroy/{id}',[AdminSVPController::class,'destroy'])->name('admin.service-providers.destroy');
 });

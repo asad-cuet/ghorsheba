@@ -45,6 +45,7 @@
                                             
                                             <li><a href="{{route('user.profile')}}">My Profile</a></li>
                                             <li><a href="{{route('admin.students')}}">Students</a></li>
+                                            <li><a href="{{route('admin.service-providers')}}">Service Providers</a></li>
                                             <li><a href="{{route('admin.new-order')}}">New Order</a></li>
                                             <li><a href="{{route('admin.service_categories')}}">Service Categories</a></li>
                                             <li><a href="{{route('admin.contacts')}}">All Contacts</a></li>
