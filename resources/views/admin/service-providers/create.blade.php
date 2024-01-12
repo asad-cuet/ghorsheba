@@ -16,24 +16,10 @@
                                             </div>
                                         </div>
                                         <div class="form-group row">
-                                            <label for="student_id"
-                                                class="col-md-4 col-form-label text-md-right">Student Id</label>
-                                            <div class="col-md-6">
-                                                <input id="student_id" type="number" class="form-control" name="student_id" required="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
                                             <label for="name"
                                                 class="col-md-4 col-form-label text-md-right">Name</label>
                                             <div class="col-md-6">
                                                 <input id="name" type="text" class="form-control" name="name" required="">
-                                            </div>
-                                        </div>
-                                        <div class="form-group row">
-                                            <label for="room_no"
-                                                class="col-md-4 col-form-label text-md-right">Room No.</label>
-                                            <div class="col-md-6">
-                                                <input id="room_no" type="number" class="form-control" name="room_no" required="">
                                             </div>
                                         </div>
                                         <div class="form-group row">
