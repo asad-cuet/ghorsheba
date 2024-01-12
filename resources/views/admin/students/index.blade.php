@@ -31,7 +31,11 @@
                         <td>{{$student->email}}</td>
                         <td>{{$student->phone}}</td>
                         <td>{{date('d-m-Y',strtotime($student->created_at))}}</td>
-                        <td><a href="/admin/order-view/{{$student->id}}" class="btn btn-primary">View</a></td>
+                        <td>
+                            <a href="/admin/order-view/{{$student->id}}" class="btn btn-primary">View</a>
+                            <a href="{{route('admin.students.edit',$student->id)}}" class="btn btn-warning">edit</a>
+                            <a href="{{route('admin.students.destroy',$student->id)}}" class="btn btn-danger">Delete</a>
+                        </td>
                         </tr>
                     @endforeach
                 </tbody>

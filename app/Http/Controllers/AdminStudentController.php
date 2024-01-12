@@ -35,4 +35,31 @@ class AdminStudentController extends Controller
         return redirect(route('admin.students'))->with('message','Student Added Succesfully');
 
     }
+
+    function edit($id)
+    {
+        $student=User::find($id);
+        return view('admin.students.edit',compact('student'));
+    }
+
+    function update(Request $request,$id)
+    {
+        $student=User::find($id);
+        $student->name=$request->name;
+        $student->email=$request->email;
+        $student->phone=$request->phone;
+        $student->room_no=$request->room_no;
+        $student->student_id=$request->student_id;
+        $student->save();
+
+        return redirect(route('admin.students'))->with('message','Student Updated Succesfully');
+
+    }
+
+    function destroy($id)
+    {
+        $student=User::destroy($id);
+        return redirect(route('admin.students'))->with('message','Student Deleted Succesfully');
+
+    }
 }

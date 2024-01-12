@@ -104,4 +104,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified', '
     Route::get('/admin/students',[AdminStudentController::class,'index'])->name('admin.students');
     Route::get('/admin/students/create',[AdminStudentController::class,'create'])->name('admin.students.create');
     Route::post('/admin/students/store',[AdminStudentController::class,'store'])->name('admin.students.store');
+    Route::get('/admin/students/edit/{id}',[AdminStudentController::class,'edit'])->name('admin.students.edit');
+    Route::post('/admin/students/store/{id}',[AdminStudentController::class,'update'])->name('admin.students.update');
+    Route::get('/admin/students/destroy/{id}',[AdminStudentController::class,'destroy'])->name('admin.students.destroy');
 });
