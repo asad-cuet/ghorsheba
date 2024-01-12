@@ -1,5 +1,8 @@
 <?php
 
+
+use App\Models\User;
+
 function isNull($val)
 {
     if(is_array($val))
@@ -119,4 +122,9 @@ function deleteFile($filename)
     {
         File::delete($filename);
     }
+}
+
+function studentsQuery()
+{
+    return User::where('utype','CST');
 }

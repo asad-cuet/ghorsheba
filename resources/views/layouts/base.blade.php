@@ -40,39 +40,64 @@
                     @if(Route::has('login'))
                         @auth
                             @if(Auth::user()->utype==='ADM')
-                            <li class="login-form"> <a href="#" title="Register">My Account(Admin)</a>
-                                <ul class="drop-down one-column hover-fade">
-                                    
-                                    <li><a href="{{route('user.profile')}}">My Profile</a></li>
-                                    <li><a href="{{route('admin.new-order')}}">New Order</a></li>
-                                    <li><a href="{{route('admin.service_categories')}}">Service Categories</a></li>
-                                    <li><a href="{{route('admin.contacts')}}">All Contacts</a></li>
-                                    <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
-                                </ul>
-                            </li>
+                                    <li class="login-form"> <a href="#" title="Register">My Account(Admin)</a>
+                                        <ul class="drop-down one-column hover-fade">
+                                            
+                                            <li><a href="{{route('user.profile')}}">My Profile</a></li>
+                                            <li><a href="{{route('admin.students')}}">Students</a></li>
+                                            <li><a href="{{route('admin.new-order')}}">New Order</a></li>
+                                            <li><a href="{{route('admin.service_categories')}}">Service Categories</a></li>
+                                            <li><a href="{{route('admin.contacts')}}">All Contacts</a></li>
+                                            <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                                        </ul>
+                                    </li>
                             @elseif(Auth::user()->utype==='SVP')
-                            <li class="login-form"> <a href="#" title="Register">My Account(S Provider)</a>
-                                <ul class="drop-down one-column hover-fade">
-                                    <li><a href="{{route('sprovider.dashboard')}}">Dashboard</a></li>
-                                    <li><a href="{{route('sprovider.profile')}}">Profile</a></li>
-                                    <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
-                                </ul>
-                            </li>
-                             @else
-                            <li class="login-form"> <a href="#" title="Register">My Account(Customer)</a>
-                                <ul class="drop-down one-column hover-fade">
-                                    <li><a href="{{route('user.profile')}}">My Profile</a></li>
-                                    <li><a href="{{route('customer.dashboard')}}">Dashboard</a></li>
-                                    <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
-                                </ul>
-                            </li>
-                             @endif
-                        <form id="logout-form" method="POST" action="{{route('logout')}}">
-                             @csrf
-                        </form>
+                                    <li class="login-form"> <a href="#" title="Register">My Account(S Provider)</a>
+                                        <ul class="drop-down one-column hover-fade">
+                                            <li><a href="{{route('sprovider.dashboard')}}">Dashboard</a></li>
+                                            <li><a href="{{route('sprovider.profile')}}">Profile</a></li>
+                                            <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                                        </ul>
+                                    </li>
+                            @else 
+                                <li> <a href="{{route('home.service_categories')}}">Service Categories</a>
+                                    <li> <a href="javascript:void(0);">Air Conditioners</a>
+                                        <ul class="drop-down one-column hover-fade">
+                                            <li><a href="/service-category-view/ac-installation">Installation</a></li>
+                                            <li><a href="/service-category-view/ac-uninstallation">Uninstallation</a></li>
+                                            <li><a href="/service-category-view/ac-repair">Repair</a></li>
+                                        </ul>
+                                    </li>
+                                    <li> <a href="#">Home Needs</a>
+                                        <ul class="drop-down one-column hover-fade">
+                                            <li><a href="/service-category-view/laundry">Laundry</a></li>
+                                            <li><a href="/service-category-view/electrical">Electrical</a></li>
+                                            <li><a href="/service-category-view/plumbing">Plumbing </a></li>
+                                            <li><a href="/service-category-view/painting">Painting</a></li>
+                                            <li><a href="/service-category-view/house-shifting">House Shifting </a></li>
+                                        </ul>
+                                    </li>
+                                    <li> <a href="#">Home Cleaning</a>
+                                        <ul class="drop-down one-column hover-fade">
+                                            <li><a href="/service-category-view/tank-cleaning">Tank Cleaning</a></li>
+                                            <li><a href="/service-category-view/furniture">Furniture </a></li>
+                                            <li><a href="/service-category-view/home-deep-cleaning">Home Deep Cleaning </a></li>
+                                            <li><a href="/service-category-view/bathroom-deep-cleaning">Bathroom Deep Cleaning</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="login-form"> <a href="#" title="Register">My Account(Student)</a>
+                                        <ul class="drop-down one-column hover-fade">
+                                            <li><a href="{{route('user.profile')}}">My Profile</a></li>
+                                            <li><a href="{{route('customer.dashboard')}}">Dashboard</a></li>
+                                            <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
+                                        </ul>
+                                    </li>
+                            @endif
+                            <form id="logout-form" method="POST" action="{{route('logout')}}">
+                                @csrf
+                            </form>
                         @else
-                           <li class="login-form"> <a href="{{route('register')}}" title="Register">Register</a></li>
-                           <li class="login-form"> <a href="{{route('login')}}" title="Login">Login</a></li>
+                            <li class="login-form"> <a href="{{route('login')}}" title="Login">Login</a></li>
                         @endif
                     @endif
                     <li class="search-bar"></li>

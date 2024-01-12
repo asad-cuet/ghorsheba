@@ -25,6 +25,7 @@ use App\Http\Livewire\UserEditProfileComponent;
 use App\Http\Livewire\UserProfileComponent;
 use App\Http\Livewire\Sprovider\EditSproviderProfileComponent;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AdminStudentController;
 // use App\Http\Controllers\RegistrationController;
 
 /*
@@ -99,4 +100,8 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified', '
     Route::get('/admin/payment-accepted/{id?}',[HandleOrderController::class,'payment_accepted'])->name('admin.payment-completed');
     Route::get('/admin/order-completed/{id?}',[HandleOrderController::class,'order_completed'])->name('admin.order-completed');
     Route::post('/admin/order-to-provider/{order_id?}',[HandleOrderController::class,'order_to_provide'])->name('admin.order-completed');
+    
+    Route::get('/admin/students',[AdminStudentController::class,'index'])->name('admin.students');
+    Route::get('/admin/students/create',[AdminStudentController::class,'create'])->name('admin.students.create');
+    Route::post('/admin/students/store',[AdminStudentController::class,'store'])->name('admin.students.store');
 });
