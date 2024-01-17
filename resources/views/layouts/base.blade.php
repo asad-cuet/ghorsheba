@@ -48,7 +48,7 @@
                                             <li><a href="{{route('admin.service-providers')}}">Service Providers</a></li>
                                             <li><a href="{{route('admin.new-order')}}">Recent Serives</a></li>
                                             <li><a href="{{route('admin.service_categories')}}">Service Categories</a></li>
-                                            <li><a href="{{route('admin.contacts')}}">All Contacts</a></li>
+                                            {{-- <li><a href="{{route('admin.contacts')}}">All Contacts</a></li> --}}
                                             <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                         </ul>
                                     </li>
