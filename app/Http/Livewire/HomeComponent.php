@@ -23,8 +23,8 @@ class HomeComponent extends Component
         {
             if(Auth::user()->utype=='CST')
             {
-                $orders=Order::where('user_id',Auth::user()->id)->orderBy('id','desc')->get();
-                return view('livewire.customer.customer-dashboard-component',['orders'=>$orders])->layout('layouts.base');
+                $scategories = ServiceCategory::all();
+                return view('livewire.service-categories-component',['scategories' => $scategories])->layout('layouts.base');
             }
             else if(Auth::user()->utype=='SVP')
             {

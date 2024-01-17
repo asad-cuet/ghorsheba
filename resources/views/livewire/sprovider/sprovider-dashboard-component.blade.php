@@ -56,11 +56,10 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Order ID</th>
-                                                        <th>User Name</th>
-                                                        <th>User Email</th>
-                                                        <th>User Phone</th>
+                                                        <th>Student Name</th>
+                                                        <th>Student Email</th>
+                                                        <th>Student Phone</th>
                                                         <th>Service Category</th>
-                                                        <th>Payment Mode</th>
                                                         <th>Created At</th>
                                                         <th>Action</th>
                                                     </tr>
@@ -73,7 +72,6 @@
                                                          <td>{{$order->user->email}}</td>
                                                          <td>{{$order->user->phone}}</td>
                                                          <td>{{$order->service->name}}</td>
-                                                         <td>{{$order->book_type}}</td>
                                                          <td>{{date('d-m-Y',strtotime($order->created_at))}}</td>
                                                          @if($order->provider_completed!=1)
                                                          <td><a onclick="return confirm('Are you sure you completed the service???')" href="/sprovider/order-complete/{{$order->id}}" class="btn btn-primary">Completed this order</a></td>

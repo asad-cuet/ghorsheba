@@ -20,7 +20,7 @@
             <div class="bg_parallax image_02_parallax"></div>
             <div class="opacy_bg_02">
                 <div class="container">
-                    <h1>Order Dashboard</h1>
+                    <h1>My Serives</h1>
                     <div class="crumbs">
                         <ul>
                             <li><a href="/">Home</a></li>
@@ -41,7 +41,7 @@
                                    <div class="panel-heading">
                                        <div class="row">
                                             <div class="col-md-6">
-                                                Order History
+                                                Service History
                                             </div>
                                             <div class="col-md-6">
                                                 
@@ -56,9 +56,8 @@
                                             <thead>
                                                 <tr>
                                                     <th>Order ID</th>
-                                                    <th>User Phone</th>
+                                                    <th>Phone</th>
                                                     <th>Service Category</th>
-                                                    <th>Payment Mode</th>
                                                     <th>Payment Approval</th>
                                                     <th>Order Completed</th>
                                                     <th>Created At</th>
@@ -70,7 +69,6 @@
                                                      <td>{{$order->id}}</td>
                                                      <td>{{$order->user->phone}}</td>
                                                      <td>{{$order->service->name}}</td>
-                                                     <td>{{$order->book_type}}</td>
                                                      <td>{{$order->payment_completed==0 ? 'No(Wait until payment approval)':'Yes' }}</td>
                                                      <td>{{$order->order_completed==0 ? 'No':'Yes'}}</td>
                                                      <td>{{date('d-m-Y',strtotime($order->created_at))}}</td>

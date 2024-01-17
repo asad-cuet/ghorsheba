@@ -46,7 +46,7 @@
                                             <li><a href="{{route('user.profile')}}">My Profile</a></li>
                                             <li><a href="{{route('admin.students')}}">Students</a></li>
                                             <li><a href="{{route('admin.service-providers')}}">Service Providers</a></li>
-                                            <li><a href="{{route('admin.new-order')}}">New Order</a></li>
+                                            <li><a href="{{route('admin.new-order')}}">Recent Serives</a></li>
                                             <li><a href="{{route('admin.service_categories')}}">Service Categories</a></li>
                                             <li><a href="{{route('admin.contacts')}}">All Contacts</a></li>
                                             <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
@@ -55,7 +55,7 @@
                             @elseif(Auth::user()->utype==='SVP')
                                     <li class="login-form"> <a href="#" title="Register">My Account(S Provider)</a>
                                         <ul class="drop-down one-column hover-fade">
-                                            <li><a href="{{route('sprovider.dashboard')}}">Dashboard</a></li>
+                                            <li><a href="{{route('sprovider.dashboard')}}">My Services</a></li>
                                             <li><a href="{{route('sprovider.profile')}}">Profile</a></li>
                                             <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                         </ul>
@@ -89,7 +89,7 @@
                                     <li class="login-form"> <a href="#" title="Register">My Account(Student)</a>
                                         <ul class="drop-down one-column hover-fade">
                                             <li><a href="{{route('user.profile')}}">My Profile</a></li>
-                                            <li><a href="{{route('customer.dashboard')}}">Dashboard</a></li>
+                                            <li><a href="{{route('customer.dashboard')}}">My Services</a></li>
                                             <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                         </ul>
                                     </li>

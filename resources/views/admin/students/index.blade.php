@@ -16,9 +16,9 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>User Name</th>
-                        <th>User Email</th>
-                        <th>User Phone</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
                         <th>Created At</th>
                         <th>Action</th>
                     </tr>
