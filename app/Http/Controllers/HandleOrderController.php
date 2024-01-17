@@ -58,6 +58,7 @@ class HandleOrderController extends Controller
         {
             $order=Order::find($order_id);
             $order->provider_completed=1;
+            $order->order_completed=1;
             $order->update();
             return back()->with('message','Order Completed Successfully');
         }  

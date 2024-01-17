@@ -27,6 +27,7 @@ class UserSeeder extends Seeder
                 "email"=>"student@gmail.com",
                 "password"=>Hash::make("password"),
                 "utype"=>"CST",
+                "room_no"=>426,
                 "email_verified_at"=>date('Y-m-d H:i:s',time())
             ]
             ]);
@@ -37,7 +38,28 @@ class UserSeeder extends Seeder
                 "password"=>Hash::make("password"),
                 "utype"=>"SVP",
                 "email_verified_at"=>date('Y-m-d H:i:s',time())
-            ]
+            ],
+            [
+                "name"=> "Demo Service Provider 1",
+                "email"=>"service1@gmail.com",
+                "password"=>Hash::make("password"),
+                "utype"=>"SVP",
+                "email_verified_at"=>date('Y-m-d H:i:s',time())
+            ],
+            [
+                "name"=> "Demo Service Provider 2",
+                "email"=>"service2@gmail.com",
+                "password"=>Hash::make("password"),
+                "utype"=>"SVP",
+                "email_verified_at"=>date('Y-m-d H:i:s',time())
+            ],
+            [
+                "name"=> "Demo Service Provider 3",
+                "email"=>"service3@gmail.com",
+                "password"=>Hash::make("password"),
+                "utype"=>"SVP",
+                "email_verified_at"=>date('Y-m-d H:i:s',time())
+            ],
             ]);
     }
 }

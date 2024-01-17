@@ -12,36 +12,23 @@ class BookController extends Controller
     public function Cod($id)
     {
 
-        if(Order::where('service_id',$id)->where('user_id',Auth::user()->id)->exists())
-        {
-            $prev_order=Order::where('service_id',$id)->where('user_id',Auth::user()->id)->orderBy('id','DESC')->first();
-            if($prev_order->payment_completed==0)
-            {
-                return back()->with('failed',"You can't order yet as previous payment hasn't been approved");
-            }
-        }
-        else
-        {
-            $service_detail=ServiceCategory::find($id);
 
-            $price=$service_detail->price;
-            $discount=$service_detail->discount;
-            $total=$price-($price*$discount/100);
+        $service_detail=ServiceCategory::find($id);
+
+
+        $order = new Order;
+        $order->user_id=Auth::id();
+        $order->service_id=$id;
+        $order->total_bill=0;
+        $order->book_type='cod';
+        $order->order_completed=0;
+        $order->payment_completed=0;
+        $order->to_provider_id=0;
+        $order->provider_completed=0;
+
+        $order->save();
+        return back()->with('message','Service Ordered Succesfully');
     
-            $order = new Order;
-            $order->user_id=Auth::id();
-            $order->service_id=$id;
-            $order->total_bill=$total;
-            $order->book_type='cod';
-            $order->transiction_id=0;
-            $order->order_completed=0;
-            $order->payment_completed=0;
-            $order->to_provider_id=0;
-            $order->provider_completed=0;
-    
-            $order->save();
-            return back()->with('message','Service Ordered Succesfully');
-        }
         
 
     }

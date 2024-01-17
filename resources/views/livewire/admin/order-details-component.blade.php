@@ -38,11 +38,11 @@
                                             <div class="col-md-6">
                                                 
                                                 @if($history!=1) 
-                                                <button wire:click="orderHistory" class="btn btn-primary">Order History</button>
-                                                <b>New Orders List</b>  
+                                                <button wire:click="orderHistory" class="btn btn-primary">History</button>
+                                                <b>Recent Service Request</b>  
                                                 @else
-                                                <button wire:click="orderNew" class="btn btn-primary">New Order</button>
-                                                <b>Order History List</b>
+                                                <button wire:click="orderNew" class="btn btn-primary">Recent</button>
+                                                <b>Service History</b>
                                                 @endif
                                             </div>
                                             <div class="col-md-6">
@@ -57,12 +57,12 @@
                                        <table class="table table-striped" >
                                             <thead>
                                                 <tr>
-                                                    <th>Order ID</th>
-                                                    <th>User Name</th>
-                                                    <th>User Email</th>
-                                                    <th>User Phone</th>
-                                                    <th>Service Category</th>
-                                                    <th>Payment Mode</th>
+                                                    <th>ID</th>
+                                                    <th>Room No</th>
+                                                    <th>Student Name</th>
+                                                    <th>Student Id</th>
+                                                    <th>Student Email</th>
+                                                    <th>Complain Type</th>
                                                     <th>Created At</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -71,11 +71,11 @@
                                                 @foreach($orders as $order)
                                                   <tr>
                                                      <td>{{$order->id}}</td>
+                                                     <td>{{$order->user->room_no}}</td>
                                                      <td>{{$order->user->name}}</td>
+                                                     <td>{{$order->user->student_id}}</td>
                                                      <td>{{$order->user->email}}</td>
-                                                     <td>{{$order->user->phone}}</td>
                                                      <td>{{$order->service->name}}</td>
-                                                     <td>{{$order->book_type}}</td>
                                                      <td>{{date('d-m-Y',strtotime($order->created_at))}}</td>
                                                      <td><a href="/admin/order-view/{{$order->id}}" class="btn btn-primary">View</a></td>
                                                    </tr>

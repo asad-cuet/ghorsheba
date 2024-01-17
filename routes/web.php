@@ -96,7 +96,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified', '
     Route::get('/admin/service-category/add',AdminAddServiceCategoryComponent::class)->name('admin.add_service_category');
     Route::get('/admin/service-category/edit/{category_id}',AdminEditServiceCategoryComponent::class)->name('admin.edit_service_category');
     Route::get('/admin/contacts',AdminContactComponent::class)->name('admin.contacts');
-    Route::get('/admin/new-order',OrderDetailsComponent::class)->name('admin.new-order');
+    Route::get('/admin/recent-service',OrderDetailsComponent::class)->name('admin.new-order');
     Route::get('/admin/order-view/{order_id?}',OrderViewComponent::class)->name('admin.new-view');
     Route::get('/admin/payment-accepted/{id?}',[HandleOrderController::class,'payment_accepted'])->name('admin.payment-completed');
     Route::get('/admin/order-completed/{id?}',[HandleOrderController::class,'order_completed'])->name('admin.order-completed');

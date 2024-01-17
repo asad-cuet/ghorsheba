@@ -82,62 +82,15 @@
                             </div>
                             <div class="col-md-4">
                                 <aside class="widget" style="margin-top: 18px;">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading">Booking Details</div>
-                                        <div class="panel-body">
-                                            <table class="table">
-                                                <tr>
-                                                    <td style="border-top: none;">Price</td>
-                                                    <td style="border-top: none;"> {{$scategory->price}} <span>&#2547</span></td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Quantity</td>
-                                                    <td>1</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Discount</td>
-                                                    <td>{{$scategory->discount}}%</td>
-                                                </tr>
-                                                @php
-                                                    $actual_price=($scategory->price)-(($scategory->price)*($scategory->discount)/100);
-                                                @endphp
-                                                <tr>
-                                                    <td>Total</td>
-                                                    <td>{{$actual_price}} <span>&#2547</span></td>
-                                                </tr>
-                                            </table>
-                                        </div>                                      
-
+                                    <div class="panel panel-default">                              
                                         @if(Route::has('login'))
                                            @auth
                                                @if(Auth::user()->utype==='CST')
-                                               <div class="panel-footer">
-                                                  <h5>Cash On Delivery</h5>
-                                                  <a class="btn btn-primary" href="/customer/book/cod/{{$scategory->id}}" onclick="return confirm('Are you sure?')">
-                                                      Book Now (Cash On Delivery)
-                                                  </a>
-                                               </div>
-
-                                               <div class="panel-footer">
-                                                   <h5>Online Payment</h5>
-                                                   <form action="/customer/book/online/{{$scategory->id}}" method="POST">
-                                                       @csrf
-
-                                                       <select name="book_type" style="margin-bottom:6px;" required class="form-select form-control" aria-label="Default select example">
-                                                            <option value="0" selected>Select Payment Mode</option>
-                                                            <option value="bkash">Bkash</option>
-                                                            <option value="rocket">Rocket</option>
-                                                            <option value="nagad">Nagad</option>
-                                                       </select>
-                                                       @error('book_type') <p class="text-danger">{{$message}}</p> @enderror
-                                                
-                                                       <label for="">Transiction ID</label>
-                                                       <input required type="text" name="tran_id" class="form-control">
-
-                                                       <input type="hidden" name="id" value="">
-                                                       <br>
-                                                       <input type="submit" class="btn btn-primary" value="Book Now (Online Payment)">
-                                                    </form>   
+                                                <div class="panel-footer">
+                                                    <h5>No Charge</h5>
+                                                    <a class="btn btn-primary" href="/customer/book/cod/{{$scategory->id}}" onclick="return confirm('Are you sure?')">
+                                                        Get Service
+                                                    </a>
                                                 </div>
                                                 @else
                                                 <div class="panel-footer">

@@ -76,7 +76,7 @@
                                                          <td>{{$order->book_type}}</td>
                                                          <td>{{date('d-m-Y',strtotime($order->created_at))}}</td>
                                                          @if($order->provider_completed!=1)
-                                                         <td><a onclick="return confirm('Are you sure you completed the order???')" href="/sprovider/order-complete/{{$order->id}}" class="btn btn-primary">Completed this order</a></td>
+                                                         <td><a onclick="return confirm('Are you sure you completed the service???')" href="/sprovider/order-complete/{{$order->id}}" class="btn btn-primary">Completed this order</a></td>
                                                          @else
                                                          <td>Completed</td>
                                                          @endif
