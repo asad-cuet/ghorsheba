@@ -10,7 +10,7 @@ class ServiceProvider extends Model
     protected $guarded=[];
     public function category()
     {
-        return $this->belongsTo(ServiceCategory::class,'service_category_id');
+        return $this->belongsTo(ComplainCategory::class,'service_category_id');
     }
 
     public function user()

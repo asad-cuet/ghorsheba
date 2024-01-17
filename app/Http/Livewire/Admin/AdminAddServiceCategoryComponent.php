@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
-use App\Models\ServiceCategory;
+use App\Models\ComplainCategory;
 use Carbon\Carbon;
 use Livewire\Component;
 use Illuminate\Support\Str;
@@ -15,9 +15,6 @@ class AdminAddServiceCategoryComponent extends Component
     public $slug;
     public $image;
     public $description;
-    public $price;
-    public $discount;
-    public $total;
     public $coverimage;
     public $inclusion;
     public $notes;
@@ -32,9 +29,6 @@ class AdminAddServiceCategoryComponent extends Component
               'slug' => 'required',
               'image' => 'required|mimes:jpeg,png',
               'description' => 'required',
-              'price' => 'required',
-              'discount' => 'required',
-              'total' => 'required',
               'coverimage' => 'required',
               'inclusion'=>'required',
                'notes'=>'required'
@@ -47,9 +41,6 @@ class AdminAddServiceCategoryComponent extends Component
             'slug' => 'required',
             'image' => 'required|mimes:jpeg,png',
             'description' => 'required',
-            'price' => 'required',
-            'discount' => 'required',
-            'total' => 'required',
             'coverimage' => 'required',
             'inclusion'=>'required',
             'notes'=>'required'
@@ -64,9 +55,6 @@ class AdminAddServiceCategoryComponent extends Component
       $this->coverimage->storeAs('services',$imageName);
       $scategory->coverimage=$imageName;
       $scategory->description=$this->description;
-      $scategory->price=$this->price;
-      $scategory->discount=$this->discount;
-      $scategory->total=$this->total;
       $scategory->inclusion=str_replace("\n",'|',trim($this->inclusion));
       $scategory->notes=str_replace("\n",'|',trim($this->notes));
       $scategory->save();

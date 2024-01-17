@@ -46,8 +46,8 @@
                                             <li><a href="{{route('user.profile')}}">My Profile</a></li>
                                             <li><a href="{{route('admin.students')}}">Students</a></li>
                                             <li><a href="{{route('admin.service-providers')}}">Service Providers</a></li>
-                                            <li><a href="{{route('admin.new-order')}}">Recent Serives</a></li>
-                                            <li><a href="{{route('admin.service_categories')}}">Service Categories</a></li>
+                                            <li><a href="{{route('admin.new-order')}}">Recent Complains</a></li>
+                                            <li><a href="{{route('admin.service_categories')}}">Complain Categories</a></li>
                                             {{-- <li><a href="{{route('admin.contacts')}}">All Contacts</a></li> --}}
                                             <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                         </ul>
@@ -55,13 +55,13 @@
                             @elseif(Auth::user()->utype==='SVP')
                                     <li class="login-form"> <a href="#" title="Register">My Account(S Provider)</a>
                                         <ul class="drop-down one-column hover-fade">
-                                            <li><a href="{{route('sprovider.dashboard')}}">My Services</a></li>
+                                            <li><a href="{{route('sprovider.dashboard')}}">My Complains</a></li>
                                             <li><a href="{{route('sprovider.profile')}}">Profile</a></li>
                                             <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                         </ul>
                                     </li>
                             @else 
-                                <li> <a href="{{route('home.service_categories')}}">Service Categories</a>
+                                <li> <a href="{{route('home.service_categories')}}">Complain Categories</a>
                                     <li> <a href="javascript:void(0);">Air Conditioners</a>
                                         <ul class="drop-down one-column hover-fade">
                                             <li><a href="/service-category-view/ac-installation">Installation</a></li>
@@ -89,7 +89,7 @@
                                     <li class="login-form"> <a href="#" title="Register">My Account(Student)</a>
                                         <ul class="drop-down one-column hover-fade">
                                             <li><a href="{{route('user.profile')}}">My Profile</a></li>
-                                            <li><a href="{{route('customer.dashboard')}}">My Services</a></li>
+                                            <li><a href="{{route('customer.dashboard')}}">My Complains</a></li>
                                             <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                         </ul>
                                     </li>

@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Livewire;
-use App\Models\ServiceCategory;
+use App\Models\ComplainCategory;
 use Livewire\Component;
 use Auth;
 use App\Models\Order;
@@ -23,7 +23,7 @@ class HomeComponent extends Component
         {
             if(Auth::user()->utype=='CST')
             {
-                $scategories = ServiceCategory::all();
+                $scategories = ComplainCategory::all();
                 return view('livewire.service-categories-component',['scategories' => $scategories])->layout('layouts.base');
             }
             else if(Auth::user()->utype=='SVP')
@@ -47,7 +47,7 @@ class HomeComponent extends Component
             }
         }
 
-        $fscategories = ServiceCategory::where('featured',1)->take(8)->get();
+        $fscategories = ComplainCategory::where('featured',1)->take(8)->get();
         return view('livewire.home-component',['fscategories' => $fscategories])->layout('layouts.base');
     }
 

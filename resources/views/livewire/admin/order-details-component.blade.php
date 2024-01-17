@@ -39,10 +39,10 @@
                                                 
                                                 @if($history!=1) 
                                                 <button wire:click="orderHistory" class="btn btn-primary">History</button>
-                                                <b>Recent Service Request</b>  
+                                                <b>Recent Complain Request</b>  
                                                 @else
                                                 <button wire:click="orderNew" class="btn btn-primary">Recent</button>
-                                                <b>Service History</b>
+                                                <b>Complain History</b>
                                                 @endif
                                             </div>
                                             <div class="col-md-6">

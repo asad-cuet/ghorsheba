@@ -2,7 +2,7 @@
 
 namespace App\Http\Livewire\Admin;
 
-use App\Models\ServiceCategory;
+use App\Models\ComplainCategory;
 use Livewire\Component;
 use Livewire\WithPagination;
 
@@ -11,7 +11,7 @@ class AdminServiceCategoryComponent extends Component
     use WithPagination;
     public function deleteServiceCategory($id)
     {
-            $scategory=ServiceCategory::find($id);
+            $scategory=ComplainCategory::find($id);
             if($scategory->image)
             {
                 unlink('assets/images/categories'.'/'.$scategory->image);
@@ -25,7 +25,7 @@ class AdminServiceCategoryComponent extends Component
     }
     public function render()
     {
-        $scategories = ServiceCategory::paginate(20);
+        $scategories = ComplainCategory::paginate(20);
         return view('livewire.admin.admin-service-category-component',['scategories'=>$scategories])->layout('layouts.base');
     }
 }

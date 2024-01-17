@@ -4,7 +4,7 @@ namespace App\Http\Controllers\Api\V1;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Models\ServiceCategory;
+use App\Models\ComplainCategory;
 use App\Http\Resources\ServiceCategoryCollection;
 use App\Http\Resources\ServiceCategoryDetailCollection;
 
@@ -17,7 +17,7 @@ class ServiceCategoryController extends Controller
 
     public function index(Request $request)
     {
-        $data = ServiceCategory::where('is_active',1);
+        $data = ComplainCategory::where('is_active',1);
 
         if(isset($request->search_table) && trim($request->search_table)!=''){
             $search_columns = ['id','name','slug','price','discount','total','description','coverimage'];
@@ -112,7 +112,7 @@ class ServiceCategoryController extends Controller
 
     public function show(Request $request,$id)
     {
-        $data = ServiceCategory::where('id',$id)->where('is_active',1);
+        $data = ComplainCategory::where('id',$id)->where('is_active',1);
         $data =$data->first();
         return new ServiceCategoryDetailCollection($data);
         
@@ -121,7 +121,7 @@ class ServiceCategoryController extends Controller
     public function update(Request $request,$id)
     {
         
-        $row = ServiceCategory::find($id);
+        $row = ComplainCategory::find($id);
         
         if($row==null || $row=='')
         {
@@ -176,7 +176,7 @@ class ServiceCategoryController extends Controller
     public function destroy(Request $request,$id)
     {
         
-        $row=ServiceCategory::where('id',$id)->first();
+        $row=ComplainCategory::where('id',$id)->first();
         
         if($row==null || $row=='')
         {

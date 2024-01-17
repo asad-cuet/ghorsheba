@@ -37,7 +37,7 @@
                     <li class="title">
                         <a href="{{route('home')}}"><img src="assets/images/logo.png"></a>
                     </li>
-                    <li> <a href="{{route('home.service_categories')}}">Service Categories</a>
+                    <li> <a href="{{route('home.service_categories')}}">Complain Categories</a>
                     <li> <a href="javascript:void(0);">Air Conditioners</a>
                         <ul class="drop-down one-column hover-fade">
                             <li><a href="service-details/ac-installation.html">Installation</a></li>
@@ -68,7 +68,7 @@
                             <li class="login-form"> <a href="#" title="Register">My Account(Admin)</a>
                                 <ul class="drop-down one-column hover-fade">
                                     <li><a href="{{route('admin.dashboard')}}">Dashboard</a></li>
-                                    <li><a href="{{route('admin.service_categories')}}">Service Categories</a></li>
+                                    <li><a href="{{route('admin.service_categories')}}">Complain Categories</a></li>
                                     <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                 </ul>
                             </li>

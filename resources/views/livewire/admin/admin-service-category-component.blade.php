@@ -11,12 +11,12 @@
             <div class="bg_parallax image_02_parallax"></div>
             <div class="opacy_bg_02">
                 <div class="container">
-                    <h1>Service Categories</h1>
+                    <h1>Complain Categories</h1>
                     <div class="crumbs">
                         <ul>
                             <li><a href="/">Home</a></li>
                             <li>/</li>
-                            <li>Service Categories</li>
+                            <li>Complain Categories</li>
                         </ul>
                     </div>
                 </div>
@@ -32,7 +32,7 @@
                                    <div class="panel-heading">
                                        <div class="row">
                                             <div class="col-md-6">
-                                                 All Service Categories
+                                                 All Complain Categories
                                             </div>
                                             <div class="col-md-6">
                                                 <a href="{{route('admin.add_service_category')}}" class="btn btn-info pull-right">Add New</a>
@@ -50,9 +50,6 @@
                                                     <th>Image</th>
                                                     <th>Name</th>
                                                     <th>Slug</th>
-                                                    <th>Price</th>
-                                                    <th>Discount</th>
-                                                    <th>Total</th>
                                                     <th>Featured</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -64,9 +61,6 @@
                                                      <td><img src="{{asset('assets/images/categories')}}/{{$scategory->image}}" width="60"></td>
                                                      <td>{{$scategory->name}}</td>
                                                      <td>{{$scategory->slug}}</td>
-                                                     <td>{{$scategory->price}}</td>
-                                                     <td>{{$scategory->discount}}</td>
-                                                     <td>{{$scategory->total}}</td>
                                                      <td>
                                                          @if($scategory->featured)
                                                          YES

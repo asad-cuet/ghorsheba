@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Livewire;
-use App\Models\ServiceCategory;
+use App\Models\ComplainCategory;
 use Livewire\Component;
 
 class ServiceCategoriesDetailComponent extends Component
@@ -14,7 +14,7 @@ class ServiceCategoriesDetailComponent extends Component
     }
     public function render()
     {
-        $scategory = ServiceCategory::where('slug', $this->category_id)->first();
+        $scategory = ComplainCategory::where('slug', $this->category_id)->first();
         //dd($scategory->name);
 
         if($scategory!=null){

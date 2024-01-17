@@ -3,7 +3,7 @@
 namespace App\Http\Livewire\Sprovider;
 use App\Models\User;
 use App\Models\ServiceProvider;
-use App\Models\ServiceCategory;
+use App\Models\ComplainCategory;
 use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use Carbon\Carbon;
@@ -69,7 +69,7 @@ class EditSproviderProfileComponent extends Component
     }
     public function render()
     {
-        $scategories = ServiceCategory::all();
+        $scategories = ComplainCategory::all();
         return view('livewire.sprovider.edit-sprovider-profile-component',['scategories'=>$scategories])->layout('layouts.base');
     }
 }

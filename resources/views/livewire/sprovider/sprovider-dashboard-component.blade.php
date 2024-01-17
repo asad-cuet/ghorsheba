@@ -59,7 +59,7 @@
                                                         <th>Student Name</th>
                                                         <th>Student Email</th>
                                                         <th>Student Phone</th>
-                                                        <th>Service Category</th>
+                                                        <th>Complain Category</th>
                                                         <th>Created At</th>
                                                         <th>Action</th>
                                                     </tr>

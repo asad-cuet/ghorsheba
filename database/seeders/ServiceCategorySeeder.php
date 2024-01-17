@@ -11,7 +11,7 @@ class ServiceCategorySeeder extends Seeder
     
     public function run()
     {
-        DB::table('service_categories')->insert([
+        DB::table('complain_categories')->insert([
             [
                 "name"=> "AC Installation",
                 "slug"=>"ac-installation",

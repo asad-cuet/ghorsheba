@@ -57,7 +57,7 @@
                                                 <tr>
                                                     <th>Order ID</th>
                                                     <th>Phone</th>
-                                                    <th>Service Category</th>
+                                                    <th>Complain Category</th>
                                                     <th>Payment Approval</th>
                                                     <th>Order Completed</th>
                                                     <th>Created At</th>

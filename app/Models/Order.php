@@ -20,7 +20,7 @@ class Order extends Model
 
     public function service()  //making relationship
     {
-         return $this->belongsTo(ServiceCategory::class,'service_id','id');
+         return $this->belongsTo(ComplainCategory::class,'service_id','id');
     }
     public function s_provider()  //making relationship
     {

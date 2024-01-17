@@ -59,31 +59,10 @@
                                              </div>
                                           </div>
                                           <div class="form-group">
-                                             <label for="notes" class="col-label col-sm-3">Notes to Customer:</label>
+                                             <label for="notes" class="col-label col-sm-3">Notes to Students:</label>
                                              <div class="col-sm-9">
                                                   <textarea class="form-control" wire:model="notes"></textarea>
                                                   @error('notes') <p class="text-danger">{{$message}}</p> @enderror
-                                             </div>
-                                          </div>
-                                          <div class="form-group">
-                                             <label for="price" class="col-label col-sm-3">Category Price:</label>
-                                             <div class="col-sm-9">
-                                                  <input type="number" class="form-control" name="name" wire:model="price" >
-                                                  @error('price') <p class="text-danger">{{$message}}</p> @enderror
-                                             </div>
-                                          </div>
-                                          <div class="form-group">
-                                             <label for="discount" class="col-label col-sm-3">Category Discount:</label>
-                                             <div class="col-sm-9">
-                                                  <input type="number" class="form-control" name="name" wire:model="discount" >
-                                                  @error('discount') <p class="text-danger">{{$message}}</p> @enderror
-                                             </div>
-                                          </div>
-                                          <div class="form-group">
-                                             <label for="total" class="col-label col-sm-3">Category Total Price:</label>
-                                             <div class="col-sm-9">
-                                                  <input type="number" class="form-control" name="name" wire:model="total" >
-                                                  @error('total') <p class="text-danger">{{$message}}</p> @enderror
                                              </div>
                                           </div>
                                           <div class="form-group">

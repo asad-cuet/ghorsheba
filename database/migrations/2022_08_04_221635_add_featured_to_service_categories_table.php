@@ -13,7 +13,7 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::table('service_categories', function (Blueprint $table) {
+        Schema::table('complain_categories', function (Blueprint $table) {
             $table->boolean('featured')->default(false);
         });
     }
@@ -25,7 +25,7 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::table('service_categories', function (Blueprint $table) {
+        Schema::table('complain_categories', function (Blueprint $table) {
             $table->dropColumn('featured');
         });
     }

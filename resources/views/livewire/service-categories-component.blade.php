@@ -4,12 +4,12 @@
             <div class="bg_parallax image_01_parallax"></div>
             <div class="opacy_bg_02">
                 <div class="container">
-                    <h1>All Services</h1>
+                    <h1>All Complains</h1>
                     <div class="crumbs">
                         <ul>
                             <li><a href="/">Home</a></li>
                             <li>/</li>
-                            <li>Service Categories</li>
+                            <li>Complain Categories</li>
                         </ul>
                     </div>
                 </div>
@@ -19,7 +19,7 @@
             <div class="container">
                 <div class="row" style="margin-top: -30px;">
                     <div class="titles">
-                        <h2>Service<span>Categories</span></h2>
+                        <h2>Complain<span>Categories</span></h2>
                         <hr class="tall">
                     </div>
                 </div>

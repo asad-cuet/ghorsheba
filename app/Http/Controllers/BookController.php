@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Order;
-use App\Models\ServiceCategory;
+use App\Models\ComplainCategory;
 use Illuminate\Support\Facades\Auth;
 
 use Illuminate\Http\Request;
@@ -13,7 +13,7 @@ class BookController extends Controller
     {
 
 
-        $service_detail=ServiceCategory::find($id);
+        $service_detail=ComplainCategory::find($id);
 
 
         $order = new Order;
@@ -54,7 +54,7 @@ class BookController extends Controller
         }
         else
         {
-            $service_detail=ServiceCategory::find($id);
+            $service_detail=ComplainCategory::find($id);
 
             $price=$service_detail->price;
             $discount=$service_detail->discount;
