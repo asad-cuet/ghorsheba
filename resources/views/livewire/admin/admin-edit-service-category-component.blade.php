@@ -52,20 +52,6 @@
                                              </div>
                                           </div>
                                           <div class="form-group">
-                                             <label for="inclusion" class="col-label col-sm-3">Category Inclusion:</label>
-                                             <div class="col-sm-9">
-                                                  <textarea class="form-control" wire:model="inclusion"></textarea>
-                                                  @error('inclusion') <p class="text-danger">{{$message}}</p> @enderror
-                                             </div>
-                                          </div>
-                                          <div class="form-group">
-                                             <label for="notes" class="col-label col-sm-3">Notes to Students:</label>
-                                             <div class="col-sm-9">
-                                                  <textarea class="form-control" wire:model="notes"></textarea>
-                                                  @error('notes') <p class="text-danger">{{$message}}</p> @enderror
-                                             </div>
-                                          </div>
-                                          <div class="form-group">
                                              <label for="slug" class="col-label col-sm-3">Category Slug:</label>
                                              <div class="col-sm-9">
                                                   <input type="text" class="form-control" name="slug" wire:model="slug">
@@ -81,18 +67,6 @@
                                                      <img src="{{$newimage->temporaryUrl()}}" width="60">
                                                   @else
                                                      <img src="{{asset('assets/images/categories')}}/{{$image}}" width="60">
-                                                  @endif
-                                             </div>
-                                          </div>
-                                          <div class="form-group">
-                                             <label for="coverimage" class="col-label col-sm-3">Category Cover Image:</label>
-                                             <div class="col-sm-9">
-                                                  <input type="file" class="form-control-file" name="coverimage" wire:model="newcoverimage">
-                                                  @error('newcoverimage') <p class="text-danger">{{$message}}</p> @enderror
-                                                  @if($newcoverimage)
-                                                     <img src="{{$newcoverimage->temporaryUrl()}}" width="60">
-                                                  @else
-                                                     <img src="{{asset('assets/images/services')}}/{{$coverimage}}" width="60">
                                                   @endif
                                              </div>
                                           </div>

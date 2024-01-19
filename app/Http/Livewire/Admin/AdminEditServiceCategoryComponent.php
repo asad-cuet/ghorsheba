@@ -17,9 +17,6 @@ class AdminEditServiceCategoryComponent extends Component
     public $image;
     public $newimage;
     public $description;
-    public $coverimage;
-    public $inclusion;
-    public $newcoverimage;
     public $featured;
     public function mount($category_id)
     {
@@ -29,10 +26,7 @@ class AdminEditServiceCategoryComponent extends Component
         $this->slug=$scategory->slug;
         $this->image=$scategory->image;
         $this->description=$scategory->description;
-        $this->coverimage=$scategory->coverimage;
         $this->featured=$scategory->featured;
-        $this->inclusion=str_replace("\n",'|',trim($scategory->inclusion));
-        $this->notes=str_replace("\n",'|',trim($scategory->notes));
     }
     public function generateSlug()
     {
@@ -45,17 +39,10 @@ class AdminEditServiceCategoryComponent extends Component
               'name' => 'required',
               'slug' => 'required',
               'description' => 'required',
-              'inclusion'=>'required',
-              'notes'=>'required'
         ]);
         if($this->newimage){
             $this->validateOnly($fields,[
                 'newimage'=> 'required|mimes:jpeg,png',
-            ]);
-         }
-         if($this->newcoverimage){
-            $this->validateOnly($fields,[
-                'newcoverimage'=> 'required|mimes:jpeg,png',
             ]);
          }
     }
@@ -65,17 +52,10 @@ class AdminEditServiceCategoryComponent extends Component
             'name'=> 'required',
             'slug'=> 'required',
             'description' => 'required',
-            'inclusion'=>'required',
-            'notes'=>'required'
         ]);
      if($this->newimage){
         $this->validate([
             'newimage'=> 'required|mimes:jpeg,png',
-        ]);
-     }
-     if($this->newcoverimage){
-        $this->validate([
-            'newcoverimage'=> 'required|mimes:jpeg,png',
         ]);
      }
      
@@ -87,15 +67,9 @@ class AdminEditServiceCategoryComponent extends Component
         $this->newimage->storeAs('categories',$imageName);
         $scategory->image=$imageName;
      }
-     if($this->newcoverimage){
-        $imageName=Carbon::now()->timestamp. '.' . $this->newcoverimage->extension();
-        $this->newcoverimage->storeAs('services',$imageName);
-        $scategory->coverimage=$imageName;
-     }
      $scategory->description=$this->description;
      $scategory->featured=$this->featured;
-     $scategory->inclusion=str_replace("\n",'|',trim($this->inclusion));
-     $scategory->notes=str_replace("\n",'|',trim($this->notes));
+
      $scategory->save();
      session()->flash('message','Category has been updated successfully!');
     }

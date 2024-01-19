@@ -15,9 +15,6 @@ class AdminAddServiceCategoryComponent extends Component
     public $slug;
     public $image;
     public $description;
-    public $coverimage;
-    public $inclusion;
-    public $notes;
     public function generateSlug()
     {
         $this->slug = Str::slug($this->name,'-');
@@ -29,9 +26,6 @@ class AdminAddServiceCategoryComponent extends Component
               'slug' => 'required',
               'image' => 'required|mimes:jpeg,png',
               'description' => 'required',
-              'coverimage' => 'required',
-              'inclusion'=>'required',
-               'notes'=>'required'
         ]);
     }
     public function createNewCategory()
@@ -41,22 +35,14 @@ class AdminAddServiceCategoryComponent extends Component
             'slug' => 'required',
             'image' => 'required|mimes:jpeg,png',
             'description' => 'required',
-            'coverimage' => 'required',
-            'inclusion'=>'required',
-            'notes'=>'required'
       ]);
-      $scategory = new ServiceCategory();
+      $scategory = new ComplainCategory();
       $scategory->name= $this->name;
       $scategory->slug= $this->slug;
       $imageName=Carbon::now()->timestamp. '.' . $this->image->extension();
       $this->image->storeAs('categories',$imageName);
       $scategory->image=$imageName;
-      $imageName=Carbon::now()->timestamp. '.' . $this->coverimage->extension();
-      $this->coverimage->storeAs('services',$imageName);
-      $scategory->coverimage=$imageName;
       $scategory->description=$this->description;
-      $scategory->inclusion=str_replace("\n",'|',trim($this->inclusion));
-      $scategory->notes=str_replace("\n",'|',trim($this->notes));
       $scategory->save();
       session()->flash('message','Category has been created successfully!');
     }

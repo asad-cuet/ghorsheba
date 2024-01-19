@@ -19,7 +19,6 @@ return new class extends Migration
             $table->string('slug')->index();
             $table->string('image'); 
             $table->string('description')->nullable();
-            $table->string('coverimage');
             $table->integer('is_active')->default(1);
             $table->timestamps();
         });

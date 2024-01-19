@@ -63,18 +63,6 @@
                                             <div class="post-content">
                                                 <h3>{{$scategory->name}}</h3>
                                                 <p>{{$scategory->description}}</p>
-                                                <h4>What Does Our {{$scategory->name}} Service Include?</h4>
-                                                <ul class="list-styles">
-                                                    @foreach(explode("|",$scategory->inclusion) as $inclusion)
-                                                       <li><i class="fa fa-plus"></i>{{$inclusion}}</li>
-                                                    @endforeach
-                                                </ul>
-                                                <h4>Note To Customer:</h4>
-                                                <ul class="list-styles">
-                                                    @foreach(explode("|",$scategory->notes) as $notes)
-                                                       <li><i class="fa fa-plus"></i>{{$notes}}</li>
-                                                    @endforeach
-                                                </ul>
                                             </div>
                                         </div>
                                     </div>
