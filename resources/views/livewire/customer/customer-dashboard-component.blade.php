@@ -55,7 +55,7 @@
                                        <table class="table table-striped" >
                                             <thead>
                                                 <tr>
-                                                    <th>Order ID</th>
+                                                    <th>Request ID</th>
                                                     <th>Phone</th>
                                                     <th>Student Id</th>
                                                     <th>Room No.</th>

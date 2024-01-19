@@ -95,7 +95,7 @@
                                         
                                      
                                         <ul class="list-group">
-                                          <li class="list-group-item"><b>Order Id:</b> {{$order->id}}</li>
+                                          <li class="list-group-item"><b>Request Id:</b> {{$order->id}}</li>
                                           <li class="list-group-item"><b>Room No:</b> {{$order->user->room_no}}</li>
                                           <li class="list-group-item"><b>Student Name:</b> {{$order->user->name}}</li>
                                           <li class="list-group-item"><b>Student Email:</b> {{$order->user->email}}</li>
