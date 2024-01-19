@@ -54,8 +54,8 @@
                                         <div class="col-md-12">
                                             <div id="single-carousel">
                                                 <div class="img-hover">
-                                                    <img src="{{asset('assets/images/services')}}/{{$scategory->coverimage}}" alt="{{$scategory->name}}"
-                                                        class="img-responsive">
+                                                    <img src="{{asset('assets/images/categories')}}/{{$scategory->image}}" alt="{{$scategory->name}}"
+                                                        class="img-responsive" style="max-width:80px;height:auto">
                                                 </div>
                                             </div>
                                         </div>

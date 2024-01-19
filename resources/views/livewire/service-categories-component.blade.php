@@ -32,7 +32,7 @@
                             <li>
                                 <div class="item-service-line">
                                     <i class="fa"><a href="/service-category-view/{{$scategory->slug}}"><img class="icon-img"
-                                                src="{{asset('assets/images/categories')}}/{{$scategory->image}}" alt="{{$scategory->name}}"></a></i>
+                                                src="{{asset('assets/images/categories')}}/{{$scategory->image}}" alt="{{$scategory->name}}" style="max-width:79px;height:auto"></a></i>
                                     <h5>{{$scategory->name}}</h5>
                                 </div>
                             </li>
