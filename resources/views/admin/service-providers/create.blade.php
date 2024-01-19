@@ -5,9 +5,9 @@
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-6 profile1" style="min-height: 300px;">
                                 <div class="thinborder-ontop">
-                                    <h3>Student Info</h3>
+                                    <h3>SAervice Provider Info</h3>
                                     <x-jet-validation-errors class="mb-4" />
-                                    <form id="userloginform" method="POST" action="{{route('admin.service-providers.store')}}">   
+                                    <form id="userloginform" method="POST" action="{{route('admin.service-providers.store')}}" enctype="multipart/form-data">   
                                         @csrf                                     
                                         <div class="form-group row">
                                             <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail Address</label>
@@ -29,6 +29,23 @@
                                                 <input id="phone" type="number" class="form-control" name="phone" required="">
                                             </div>
                                         </div>
+                                        <div class="form-group row">
+                                            <label for="phone"
+                                                class="col-md-4 col-form-label text-md-right">Service Category</label>
+                                            <div class="col-md-6">
+                                                <select class="form-control-file" name="complain_category_id">
+                                                    @foreach($scategories as $scategory)
+                                                       <option value="{{$scategory->id}}">{{$scategory->name}}</option>
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="image" class="col-md-4 col-form-label text-md-right">Image:</label>
+                                            <div class="col-sm-6">
+                                                 <input type="file" class="form-control-file" name="image">
+                                            </div>
+                                         </div>
                                         <div class="form-group row">
                                             <div class="col-md-12" style="text-align: center;">
                                                 <button type="submit" class="btn btn-primary">Save</button>

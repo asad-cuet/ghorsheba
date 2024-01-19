@@ -69,7 +69,7 @@
 							"type": "text"
 						},
 						{
-							"key": "service_category_id",
+							"key": "complain_category_id",
 							"value": "1",
 							"type": "text"
 						},

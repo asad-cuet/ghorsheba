@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('image')->nullable();
             $table->string('about')->nullable();
             $table->string('city')->nullable();
-            $table->bigInteger('service_category_id')->unsigned()->nullable();
+            $table->bigInteger('complain_category_id')->unsigned()->nullable();
             $table->string('service_locations')->nullable();
             $table->integer('is_active')->default(1);
             $table->timestamps();

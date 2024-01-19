@@ -16,9 +16,11 @@
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>Student Name</th>
-                        <th>Student Email</th>
-                        <th>Student Phone</th>
+                        <th>Image</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Service Category</th>
                         <th>Created At</th>
                         <th>Action</th>
                     </tr>
@@ -27,14 +29,18 @@
                     @foreach($users as $user)
                     <tr>
                         <td>{{$user->id}}</td>
+                        <td>
+                            <img src="{{asset($user->SPInfo->image)}}" style="width:100px;height:auto" alt="">
+                        </td>
                         <td>{{$user->name}}</td>
                         <td>{{$user->email}}</td>
                         <td>{{$user->phone}}</td>
+                        <td>{{$user->SPInfo->category->name}}</td>
                         <td>{{date('d-m-Y',strtotime($user->created_at))}}</td>
                         <td>
                             <a href="/admin/order-view/{{$user->id}}" class="btn btn-primary">View</a>
                             <a href="{{route('admin.service-providers.edit',$user->id)}}" class="btn btn-warning">edit</a>
-                            <a href="{{route('admin.service-providers.destroy',$user->id)}}" class="btn btn-danger">Delete</a>
+                            {{-- <a href="{{route('admin.service-providers.destroy',$user->id)}}" class="btn btn-danger">Delete</a> --}}
                         </td>
                         </tr>
                     @endforeach

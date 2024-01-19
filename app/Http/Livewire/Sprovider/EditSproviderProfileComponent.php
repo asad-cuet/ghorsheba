@@ -17,7 +17,7 @@ class EditSproviderProfileComponent extends Component
     public $image;
     public $newimage;
     public $city;
-    public $service_category_id;
+    public $complain_category_id;
     public $service_locations;
     public function mount()
     {
@@ -26,25 +26,19 @@ class EditSproviderProfileComponent extends Component
         $this->about=$sprovider->about;
         $this->city=$sprovider->city;
         $this->image=$sprovider->image;
-        $this->service_category_id=$sprovider->service_category_id;
+        $this->complain_category_id=$sprovider->complain_category_id;
         $this->service_locations=$sprovider->service_locations;
     }
     public function updated($fields)
     {
         $this->validateOnly($fields,[
-             'about'=> 'required',
-            'city'=> 'required',
-            'service_category_id' => 'required',
-            'service_locations' => 'required'
+            'complain_category_id' => 'required',
       ]);
     }
     public function updateProfile()
     {
         $this->validate([
-            'about'=> 'required',
-            'city'=> 'required',
-            'service_category_id' => 'required',
-            'service_locations' => 'required'
+            'complain_category_id' => 'required',
         ]);
         $sprovider = ServiceProvider::where('user_id',Auth::user()->id)->first();
         $sprovider->id=$this->service_provider_id;
@@ -60,7 +54,7 @@ class EditSproviderProfileComponent extends Component
                 $this->newimage->storeAs('sproviders',$imageName);
                 $sprovider->image=$imageName;
              }
-             $sprovider->service_category_id=$this->service_category_id;
+             $sprovider->complain_category_id=$this->complain_category_id;
              $sprovider->service_locations=$this->service_locations;
             $sprovider->save();
             session()->flash('message','Profile has been updated successfully!');

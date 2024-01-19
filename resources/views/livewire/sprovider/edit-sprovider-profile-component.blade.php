@@ -53,13 +53,13 @@
                                                 @error('about') <p class="text-danger">{{$message}}</p> @enderror
                                                 <p><b>City: </b><input id="city" type="city"  class="form-control" wire:model="city"/></p>
                                                 @error('city') <p class="text-danger">{{$message}}</p> @enderror
-                                                <select class="form-control-file" name="service_category_id" wire:model="service_category_id">
+                                                <select class="form-control-file" name="complain_category_id" wire:model="complain_category_id">
                                                     @foreach($scategories as $scategory)
                                                        <option value="{{$scategory->id}}">{{$scategory->name}}</option>
                                                     @endforeach
                                                 </select>
-                                                <p><b>Service Category ID: </b><input id="service_category_id" type="service_category_id"  class="form-control" wire:model="service_category_id"/></p>
-                                                @error('service_category_id') <p class="text-danger">{{$message}}</p> @enderror
+                                                <p><b>Service Category ID: </b><input id="complain_category_id" type="complain_category_id"  class="form-control" wire:model="complain_category_id"/></p>
+                                                @error('complain_category_id') <p class="text-danger">{{$message}}</p> @enderror
                                                 <p><b>Service Locations zipcode/pincode: </b><input id="service_locations" type="service_locations"  class="form-control" wire:model="service_locations"/></p>
                                                 @error('service_locations') <p class="text-danger">{{$message}}</p> @enderror
                                                 <hr>

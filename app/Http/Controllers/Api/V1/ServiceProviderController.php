@@ -20,7 +20,7 @@ class ServiceProviderController extends Controller
         $data = ServiceProvider::where('is_active',1);
 
         if(isset($request->search_table) && trim($request->search_table)!=''){
-            $search_columns = ['id','about','city','service_locations','user_id','service_category_id','service_category_id'];
+            $search_columns = ['id','about','city','service_locations','user_id','complain_category_id','complain_category_id'];
             $data=advanceSearch(
                 $searh_key=$request->search_table,
                 $columns_array=$search_columns,
@@ -46,7 +46,7 @@ class ServiceProviderController extends Controller
                         
                         $row->user_id = $request->user_id;
                         
-                        $row->service_category_id = $request->service_category_id;
+                        $row->complain_category_id = $request->complain_category_id;
                         
                         $image_key='image';
                         $image_path='storage/Service Providers';
@@ -108,9 +108,9 @@ class ServiceProviderController extends Controller
                         
                         $row->user_id=$request->user_id;
                         
-                        $row->service_category_id=$request->service_category_id;
+                        $row->complain_category_id=$request->complain_category_id;
                         
-                        $row->service_category_id=$request->service_category_id;
+                        $row->complain_category_id=$request->complain_category_id;
                         
                         $image_key='image';
                         $image_path='storage/Service Providers';

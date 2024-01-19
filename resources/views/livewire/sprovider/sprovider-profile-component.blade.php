@@ -46,11 +46,11 @@
                                                <p><b>Email: </b>{{Auth::user()->email}}</p>
                                                <p><b>Phone: </b>{{Auth::user()->phone}}</p>
                                                <p><b>Complain Category: </b>
-                                               @if($sprovider->service_category_id)
+                                               @if($sprovider->complain_category_id)
                                                    {{$sprovider->category->name}}
                                                @endif
                                                </p>
-                                               <a href="{{route('sprovider.edit_profile')}}" class="btn btn-info pull-right">Update Profile</a>
+                                               {{-- <a href="{{route('sprovider.edit_profile')}}" class="btn btn-info pull-right">Update Profile</a> --}}
                                           </div>
                                       </div>
                                    </div>

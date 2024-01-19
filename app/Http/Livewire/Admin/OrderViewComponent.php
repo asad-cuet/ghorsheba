@@ -18,7 +18,7 @@ class OrderViewComponent extends Component
     {
         $order=Order::find($this->order_id);
         $service_id=$order->service_id;
-        $s_providers=ServiceProvider::where('service_category_id',$service_id)->get();
+        $s_providers=ServiceProvider::where('complain_category_id',$service_id)->get();
         return view('livewire.admin.order-view-component',['order'=>$order,'s_providers'=>$s_providers])->layout('layouts.base');;
     }
 }

@@ -133,3 +133,5 @@ function spvQuery()
 {
     return User::where('utype','SVP');
 }
+
+

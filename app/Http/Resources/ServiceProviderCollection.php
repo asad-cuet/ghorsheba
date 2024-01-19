@@ -19,8 +19,8 @@ class ServiceProviderCollection extends ResourceCollection
             'city' => $data->city,
             'service_locations' => $data->service_locations,
             'user_id' => $data->user_id,
-            'service_category_id' => $data->service_category_id,
-            'service_category_id' => $data->service_category_id,
+            'complain_category_id' => $data->complain_category_id,
+            'complain_category_id' => $data->complain_category_id,
             'image' => $data->image? asset($data->image):null,
             ];
         });

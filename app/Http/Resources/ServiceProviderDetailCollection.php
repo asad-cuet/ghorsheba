@@ -18,8 +18,8 @@ class ServiceProviderDetailCollection extends JsonResource
             'city' => $this->city,
             'service_locations' => $this->service_locations,
             'user_id' => $this->user_id,
-            'service_category_id' => $this->service_category_id,
-            'service_category_id' => $this->service_category_id,
+            'complain_category_id' => $this->complain_category_id,
+            'complain_category_id' => $this->complain_category_id,
             'image' => $this->image? asset($this->image):null,
             ];
     }

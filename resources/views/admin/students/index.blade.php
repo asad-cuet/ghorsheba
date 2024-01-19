@@ -17,8 +17,10 @@
                     <tr>
                         <th>ID</th>
                         <th>Name</th>
+                        <th>Student Id</th>
                         <th>Email</th>
                         <th>Phone</th>
+                        <th>Room No.</th>
                         <th>Created At</th>
                         <th>Action</th>
                     </tr>
@@ -28,13 +30,15 @@
                     <tr>
                         <td>{{$student->id}}</td>
                         <td>{{$student->name}}</td>
+                        <td>{{$student->student_id}}</td>
                         <td>{{$student->email}}</td>
                         <td>{{$student->phone}}</td>
+                        <td>{{$student->room_no}}</td>
                         <td>{{date('d-m-Y',strtotime($student->created_at))}}</td>
                         <td>
-                            <a href="/admin/order-view/{{$student->id}}" class="btn btn-primary">View</a>
+                            {{-- <a href="/admin/order-view/{{$student->id}}" class="btn btn-primary">View</a> --}}
                             <a href="{{route('admin.students.edit',$student->id)}}" class="btn btn-warning">edit</a>
-                            <a href="{{route('admin.students.destroy',$student->id)}}" class="btn btn-danger">Delete</a>
+                            {{-- <a href="{{route('admin.students.destroy',$student->id)}}" class="btn btn-danger">Delete</a> --}}
                         </td>
                         </tr>
                     @endforeach

@@ -65,4 +65,8 @@ class User extends Authenticatable implements MustVerifyEmail
     {
         return $this->hasOne(Profile::class,'user_id');
     }
+    public function SPInfo()
+    {
+        return $this->hasOne(ServiceProvider::class,'user_id');
+    }
 }
