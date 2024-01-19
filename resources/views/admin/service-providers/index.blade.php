@@ -38,7 +38,7 @@
                         <td>{{$user->SPInfo->category->name}}</td>
                         <td>{{date('d-m-Y',strtotime($user->created_at))}}</td>
                         <td>
-                            <a href="/admin/order-view/{{$user->id}}" class="btn btn-primary">View</a>
+                            {{-- <a href="/admin/order-view/{{$user->id}}" class="btn btn-primary">View</a> --}}
                             <a href="{{route('admin.service-providers.edit',$user->id)}}" class="btn btn-warning">edit</a>
                             {{-- <a href="{{route('admin.service-providers.destroy',$user->id)}}" class="btn btn-danger">Delete</a> --}}
                         </td>
