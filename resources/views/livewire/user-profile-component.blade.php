@@ -53,7 +53,7 @@
                                             @else
                                                <h3>Name: {{$user->name}}</h3>
                                                <p><b>Email: </b>{{$user->email}}</p>
-                                               <p><b>Student Id: </b>{{$user->sudent_id}}</p>
+                                               <p><b>Student Id: </b>{{$user->student_id}}</p>
                                                <p><b>Phone: </b>{{$user->phone}}</p>
                                                <p><b>Room No: </b>{{$user->room_no}}</p>
                                             @endif
