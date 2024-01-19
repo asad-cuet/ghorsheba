@@ -57,9 +57,12 @@
                                                 <tr>
                                                     <th>Order ID</th>
                                                     <th>Phone</th>
+                                                    <th>Student Id</th>
+                                                    <th>Room No.</th>
                                                     <th>Complain Category</th>
-                                                    <th>Payment Approval</th>
-                                                    <th>Order Completed</th>
+                                                    <th>Service Provider Name</th>
+                                                    <th>Service Provider Phone</th>
+                                                    <th>Service Completed</th>
                                                     <th>Created At</th>
                                                 </tr>
                                            </thead>
@@ -68,8 +71,11 @@
                                                   <tr>
                                                      <td>{{$order->id}}</td>
                                                      <td>{{$order->user->phone}}</td>
+                                                     <td>{{$order->user->student_id}}</td>
+                                                     <td>{{$order->user->room_no}}</td>
                                                      <td>{{$order->service->name}}</td>
-                                                     <td>{{$order->payment_completed==0 ? 'No(Wait until payment approval)':'Yes' }}</td>
+                                                     <td>{{$order?->s_provider?->name}}</td>
+                                                     <td>{{$order?->s_provider?->phone}}</td>
                                                      <td>{{$order->order_completed==0 ? 'No':'Yes'}}</td>
                                                      <td>{{date('d-m-Y',strtotime($order->created_at))}}</td>
                                                    </tr>
