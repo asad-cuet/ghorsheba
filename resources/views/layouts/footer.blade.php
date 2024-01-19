@@ -6,11 +6,11 @@
                         <h3>CONTACT US</h3>
                         <ul class="contact_footer">
                             <li class="location">
-                                <i class="fa fa-map-marker"></i> <a href="#"> Mirpur, Dhaka, Bangladesh</a>
+                                <i class="fa fa-map-marker"></i> <a href="#">Bangabondhu Hall,CUET,Raozan,Chittagong</a>
                             </li>
                             <li>
                                 <i class="fa fa-envelope"></i> <a
-                                    href="mailto:contact@surfsidemedia.in">contact@ghorsheba.in</a>
+                                    href="mailto:contact@surfsidemedia.in">bangabondhuhall@cuet.ac.bd</a>
                             </li>
                             <li>
                                 <i class="fa fa-headphones"></i> <a href="tel:+8801871717051">+8801871717051</a>
@@ -28,7 +28,7 @@
                 </div>
             </div>
             <div class="footer-down">
-               <p class="text-xs-center crtext">&copy; 2022 GhorSheba. All Rights Reserved.</p>
+               <p class="text-xs-center crtext">&copy; </p>
             </div>            
         </footer>
     </div>

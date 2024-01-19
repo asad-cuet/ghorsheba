@@ -1,7 +1,20 @@
 
 <div class="section-title-01 honmob">
-    <div class="bg_parallax image_02_parallax"></div>
     <div class="opacy_bg_02">
+        <div  class="tp-banner"> 
+                <ul>
+                    <li>
+                        <img src="{{asset('assets/images/slide/1.jpg')}}" alt="fullslide1" >
+                    </li>
+                    <li>
+                        <img src="{{asset('assets/images/slide/2.jpg')}}" alt="fullslide1">
+                    </li>
+                    <li>
+                        <img src="{{asset('assets/images/slide/3.jpg')}}" alt="fullslide1">
+                    </li>
+                </ul>
+                <div class="tp-bannertimer"></div>
+        </div>
         <div class="container">
             <h1>Login</h1>
             <div class="crumbs">
@@ -14,15 +27,9 @@
         </div>
     </div>
 </div>
-<section class="content-central">
+<section class="content-central loginContainer">
     <div class="content_info">
-        <div class="paddings-mini">
-            <div class="container">
-                <div class="row portfolioContainer">
-                    <div class="col-xs-12 col-sm-3 col-md-3 profile1">
-                    </div>
-                    <div class="col-xs-12 col-sm-6 col-md-6 profile1" style="min-height: 300px;">
-                        <div class="thinborder-ontop">
+    <div class="thinborder-ontop">
                             <h3>Login Info</h3>
                             <x-jet-validation-errors class="mb-4" />
                             <form id="userloginform" method="POST" action="{{route('login')}}">   
@@ -57,12 +64,6 @@
                                     </div>
                                 </div>
                             </form>
-                        </div>                                
-                    </div>
-                    <div class="col-xs-12 col-sm-3 col-md-3 profile1">
-                    </div>
-                </div>
-            </div>
-        </div>
+                        </div>  
     </div>         
 </section>

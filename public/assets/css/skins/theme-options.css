@@ -19,7 +19,7 @@
     box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
     z-index: 99;
     position: relative;
-    margin-top: -170px;
+    margin-top: -344px;
     margin-bottom: 0px;
 }
 .layout-semiboxed footer .container {
@@ -373,4 +373,8 @@
 #theme-options .layout-style li a {
     font-size: 11px;
     color: #424242;
+}
+
+.loginContainer{
+	width: 500px;
 }

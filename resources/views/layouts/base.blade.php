@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>GhorSheba - Online Service Provider for your House Needs</title>
+    <title>CUET | Hall-Service</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="{{asset('assets/css/style.css')}}" rel="stylesheet" media="screen">
     <link href="{{asset('assets/css/chblue.css')}}" rel="stylesheet" media="screen">
@@ -19,13 +19,13 @@
                         <ul >
                             <li><a href="tel:+8801871717051"><i class="fa fa-phone"></i> +8801871717051</a></li>
                             <li><a href="mailto:contact@ghorsheba.com"><i class="fa fa-envelope"></i>
-                                contact@ghorsheba.com</a></li>
+                            bangabondhuhall@cuet.ac.bd</a></li>
                         </ul>
                     </div>
                     <div class="col-md-6">
                         <ul class="text-right">
                             <li>
-                                <i class="fa fa-map-marker"></i> Mirpur, Dhaka</a></li>
+                                <i class="fa fa-map-marker"></i>Bangabondhu Hall,CUET,Raozan,Chittagong</a></li>
                         </ul>
                     </div>
                 </div>
@@ -61,31 +61,6 @@
                                         </ul>
                                     </li>
                             @else 
-                                <li> <a href="{{route('home.service_categories')}}">Complain Categories</a>
-                                    <li> <a href="javascript:void(0);">Air Conditioners</a>
-                                        <ul class="drop-down one-column hover-fade">
-                                            <li><a href="/service-category-view/ac-installation">Installation</a></li>
-                                            <li><a href="/service-category-view/ac-uninstallation">Uninstallation</a></li>
-                                            <li><a href="/service-category-view/ac-repair">Repair</a></li>
-                                        </ul>
-                                    </li>
-                                    <li> <a href="#">Home Needs</a>
-                                        <ul class="drop-down one-column hover-fade">
-                                            <li><a href="/service-category-view/laundry">Laundry</a></li>
-                                            <li><a href="/service-category-view/electrical">Electrical</a></li>
-                                            <li><a href="/service-category-view/plumbing">Plumbing </a></li>
-                                            <li><a href="/service-category-view/painting">Painting</a></li>
-                                            <li><a href="/service-category-view/house-shifting">House Shifting </a></li>
-                                        </ul>
-                                    </li>
-                                    <li> <a href="#">Home Cleaning</a>
-                                        <ul class="drop-down one-column hover-fade">
-                                            <li><a href="/service-category-view/tank-cleaning">Tank Cleaning</a></li>
-                                            <li><a href="/service-category-view/furniture">Furniture </a></li>
-                                            <li><a href="/service-category-view/home-deep-cleaning">Home Deep Cleaning </a></li>
-                                            <li><a href="/service-category-view/bathroom-deep-cleaning">Bathroom Deep Cleaning</a></li>
-                                        </ul>
-                                    </li>
                                     <li class="login-form"> <a href="#" title="Register">My Account(Student)</a>
                                         <ul class="drop-down one-column hover-fade">
                                             <li><a href="{{route('user.profile')}}">My Profile</a></li>
@@ -131,11 +106,11 @@
                         <h3>CONTACT US</h3>
                         <ul class="contact_footer">
                             <li class="location">
-                                <i class="fa fa-map-marker"></i> <a href="#"> Mirpur, Dhaka, Bangladesh</a>
+                                <i class="fa fa-map-marker"></i> <a href="#"> Bangabondhu Hall,CUET,Raozan,Chittagong</a>
                             </li>
                             <li>
                                 <i class="fa fa-envelope"></i> <a
-                                    href="mailto:contact@surfsidemedia.in">contact@ghorsheba.in</a>
+                                    href="mailto:contact@surfsidemedia.in">bangabondhuhall@cuet.ac.bd</a>
                             </li>
                             <li>
                                 <i class="fa fa-headphones"></i> <a href="tel:+8801871717051">+8801871717051</a>
@@ -153,7 +128,7 @@
                 </div>
             </div>
             <div class="footer-down">
-               <p class="text-xs-center crtext">&copy; 2022 GhorSheba. All Rights Reserved.</p>
+               <p class="text-xs-center crtext">&copy;</p>
             </div>            
         </footer>
     </div>
@@ -190,7 +165,11 @@
                 minHeight: 250,
                 navigationType: "none",
                 navigationArrows: "solo",
-                navigationStyle: "preview1"
+                navigationStyle: "preview1",
+                autoPlay: {
+                 enabled: true,
+                 delay: 10000, // Set the delay between slides in milliseconds (10 seconds in this case)
+                },
             });
         });
 
