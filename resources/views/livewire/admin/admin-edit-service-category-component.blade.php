@@ -71,9 +71,9 @@
                                              </div>
                                           </div>
                                           <div class="form-group">
-                                             <label for="featured" class="col-label col-sm-3">Featured:</label>
+                                             <label for="featured" class="col-label col-sm-3">Is Active:</label>
                                              <div class="col-sm-9">
-                                                  <select class="form-control" name="featured" wire:model="featured" >
+                                                  <select class="form-control" name="is_active" wire:model="is_active" >
                                                        <option value="0">NO</option>
                                                        <option value="1">YES</option>
                                                   </select>

@@ -65,6 +65,7 @@
                                         <ul class="drop-down one-column hover-fade">
                                             <li><a href="{{route('user.profile')}}">My Profile</a></li>
                                             <li><a href="{{route('customer.dashboard')}}">My Complains</a></li>
+                                            <li><a href="{{route('home')}}">Complain Categories</a></li>
                                             <li><a href="{{route('logout')}}" onclick="event.preventDefault(); document.getElementById('logout-form').submit();">Logout</a></li>
                                         </ul>
                                     </li>

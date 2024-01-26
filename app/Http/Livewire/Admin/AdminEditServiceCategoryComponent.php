@@ -17,7 +17,7 @@ class AdminEditServiceCategoryComponent extends Component
     public $image;
     public $newimage;
     public $description;
-    public $featured;
+    public $is_active;
     public function mount($category_id)
     {
         $scategory = ComplainCategory::find($category_id);
@@ -26,7 +26,7 @@ class AdminEditServiceCategoryComponent extends Component
         $this->slug=$scategory->slug;
         $this->image=$scategory->image;
         $this->description=$scategory->description;
-        $this->featured=$scategory->featured;
+        $this->is_active=$scategory->is_active;
     }
     public function generateSlug()
     {
@@ -68,7 +68,7 @@ class AdminEditServiceCategoryComponent extends Component
         $scategory->image=$imageName;
      }
      $scategory->description=$this->description;
-     $scategory->featured=$this->featured;
+     $scategory->is_active=$this->is_active?? 0;
 
      $scategory->save();
      session()->flash('message','Category has been updated successfully!');

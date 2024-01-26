@@ -23,7 +23,7 @@ class HomeComponent extends Component
         {
             if(Auth::user()->utype=='CST')
             {
-                $scategories = ComplainCategory::all();
+                $scategories = ComplainCategory::where('is_active',1)->get();
                 return view('livewire.service-categories-component',['scategories' => $scategories])->layout('layouts.base');
             }
             else if(Auth::user()->utype=='SVP')
