@@ -34,11 +34,21 @@
                                    <div class="panel-body">
                                       <div class="row">
                                           <div class="col-md-4">
-                                              @if($user->image!='')
-                                                <img src="{{asset($user->image)}}" width="100%">
-                                              @else
-                                                <img src="{{defaultImage()}}" width="100%">
-                                              @endif
+                                            @if(Auth::user()->utype==='ADM' || Auth::user()->utype==='SPV')
+                                                @if($user->profile->image!='')
+                                                    <img src="{{asset('assets/images/profiles/'.$user->profile->image)}}" width="100%">
+                                                @else
+                                                    <img src="{{defaultImage()}}" width="100%">
+                                                @endif
+                                            {{-- @elseif(Auth::user()->utype==='SPV') --}}
+
+                                            @else
+                                                @if($user->image!='')
+                                                    <img src="{{asset($user->image)}}" width="100%">
+                                                @else
+                                                    <img src="{{defaultImage()}}" width="100%">
+                                                @endif
+                                            @endif
                                           </div>
                                           <div class="col-md-8">
                                             @if(Auth::user()->utype==='ADM')
