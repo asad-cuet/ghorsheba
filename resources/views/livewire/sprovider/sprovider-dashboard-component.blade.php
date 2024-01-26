@@ -61,6 +61,8 @@
                                                         <th>Student Email</th>
                                                         <th>Student Phone</th>
                                                         <th>Complain Category</th>
+                                                        <th>Complain Image</th>
+                                                        <th>Complain Description</th>
                                                         <th>Created At</th>
                                                         <th>Action</th>
                                                     </tr>
@@ -74,6 +76,8 @@
                                                          <td>{{$order->user->email}}</td>
                                                          <td>{{$order->user->phone}}</td>
                                                          <td>{{$order->service->name}}</td>
+                                                         <td><img src="{{asset($order->image?? defaultImage())}}" style="width:50px;height:auto" alt=""></td>
+                                                         <td>{{$order->description}}</td>
                                                          <td>{{date('d-m-Y',strtotime($order->created_at))}}</td>
                                                          @if($order->provider_completed!=1)
                                                          <td><a onclick="return confirm('Are you sure you completed the service???')" href="/sprovider/order-complete/{{$order->id}}" class="btn btn-primary">Completed this order</a></td>

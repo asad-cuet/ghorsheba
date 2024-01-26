@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 
 class BookController extends Controller
 {
-    public function Cod($id)
+    public function Cod(Request $request,$id)
     {
 
 
@@ -25,6 +25,31 @@ class BookController extends Controller
         $order->payment_completed=0;
         $order->to_provider_id=0;
         $order->provider_completed=0;
+        $order->description=$request->description;
+
+        $image_key='image';
+        $image_path='storage/Orders';
+        if($request->hasfile($image_key))       
+        {
+            $file=$request->file($image_key);
+            if(isImage($file))
+            {
+                $path=$image_path;
+                $image_file_name=uploadFile($file,$path);
+                if($image_file_name)
+                {
+                    $order[$image_key]=$image_file_name;
+                }
+                else
+                {
+                    return back()->with('warning','Image Uploading Failed');
+                }
+            }
+            else
+            {
+                return back()->with('warning','Uploaded image extension is not allowed');
+            }
+        }
 
         $order->save();
         return back()->with('message','Service Ordered Succesfully');

@@ -66,7 +66,7 @@ Route::post('/search',[SearchController::class,'searchService'])->name('searchSe
 
 Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])->group(function () {
     Route::get('/customer/dashboard',CustomerDashboardComponent::class)->name('customer.dashboard');
-    Route::get('/customer/book/cod/{id?}',[BookController::class,'Cod'])->name('customer.book');
+    Route::post('/customer/book/cod/{id?}',[BookController::class,'Cod'])->name('customer.book');
     Route::post('/customer/book/online/{id?}',[BookController::class,'online'])->name('customer.online');
     Route::get('/user/profile',UserProfileComponent::class)->name('user.profile');
     Route::get('/user/profile/edit',UserEditProfileComponent::class)->name('user.editprofile');

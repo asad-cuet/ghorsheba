@@ -33,7 +33,7 @@
                 <div class="paddings-mini">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-8 single-blog">
+                            <div class="col-md-6 single-blog">
                                 <div class="post-item">
                                     <div class="row">
                                         <div class="col-md-12">
@@ -68,7 +68,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4">
+                            <div class="col-md-6">
                                 <aside class="widget" style="margin-top: 18px;">
                                     <div class="panel panel-default">                              
                                         @if(Route::has('login'))
@@ -76,9 +76,26 @@
                                                @if(Auth::user()->utype==='CST')
                                                 <div class="panel-footer">
                                                     <h5>No Charge</h5>
-                                                    <a class="btn btn-primary" href="/customer/book/cod/{{$scategory->id}}" onclick="return confirm('Are you sure?')">
-                                                        Get Service
-                                                    </a>
+                                                    <form id="userloginform" method="POST" action="{{url('/customer/book/cod/'.$scategory->id)}}" enctype="multipart/form-data">   
+                                                        @csrf       
+                                                        <div class="form-group">
+                                                            <label for="image" class="col-md-4 col-form-label text-md-right">Image:</label>
+                                                            <div class="col-sm-6">
+                                                                 <input type="file" class="form-control-file" name="image">
+                                                            </div>
+                                                         </div>                              
+                                                        <div class="form-group row">
+                                                            <label for="email" class="col-sm-4 col-form-label text-md-right">Description</label>
+                                                            <div class="col-md-6">
+                                                                <textarea id="" type="text" class="form-control" name="description"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <div class="col-md-12" style="text-align: center;">
+                                                                <button type="submit" class="btn btn-primary">Get Service</button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
                                                 </div>
                                                 @else
                                                 <div class="panel-footer">

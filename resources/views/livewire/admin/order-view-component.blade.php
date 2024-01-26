@@ -100,6 +100,10 @@
                                           <li class="list-group-item"><b>Student Name:</b> {{$order->user->name}}</li>
                                           <li class="list-group-item"><b>Student Email:</b> {{$order->user->email}}</li>
                                           <li class="list-group-item"><b>Student Phone:</b> {{$order->user->phone}}</li>
+                                          @if($order->image!='')
+                                          <li class="list-group-item"><b>Complain Image</b>:<img src="{{asset($order->image?? defaultImage())}}" style="width:100px;height:auto" alt=""></li>
+                                          @endif
+                                          <li class="list-group-item"><b>Complain Description</b>:{{$order->description}}</li>
                                           <li class="list-group-item"><b>Service Category:</b> {{$order->service->name}}</li>
                                           <li class="list-group-item"><b>Is Order Completed</b>:{{$order->order_completed==0 ? 'No': 'Yes'}}</li>
                                           <li class="list-group-item"><b>Service provided to</b>:{{$order->to_provider_id==0 ? 'No One': ' Id: '.$order->s_provider->id.' and Name: '.$order->s_provider->name}}</li>

@@ -24,6 +24,8 @@ return new class extends Migration
             $table->integer('payment_completed')->nullable();  // 0 or 1
             $table->integer('to_provider_id')->nullable();  // provider user id
             $table->integer('provider_completed')->nullable();  // 0 or 1
+            $table->text('description')->nullable();
+            $table->text('image')->nullable();
             $table->integer('is_active')->default(1);
             $table->timestamps();
         });
