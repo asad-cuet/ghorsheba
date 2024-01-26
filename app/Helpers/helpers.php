@@ -135,3 +135,8 @@ function spvQuery()
 }
 
 
+function defaultImage()
+{
+    return asset("assets/images/profiles/default.jpg");
+}
+

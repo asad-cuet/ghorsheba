@@ -16,6 +16,7 @@
                 <thead>
                     <tr>
                         <th>ID</th>
+                        <th>Image</th>
                         <th>Name</th>
                         <th>Student Id</th>
                         <th>Email</th>
@@ -29,6 +30,7 @@
                     @foreach($students as $student)
                     <tr>
                         <td>{{$student->id}}</td>
+                        <td><img src="{{asset($student->image?? defaultImage())}}" style="width:100px;height:auto" alt=""></td>
                         <td>{{$student->name}}</td>
                         <td>{{$student->student_id}}</td>
                         <td>{{$student->email}}</td>

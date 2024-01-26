@@ -8,7 +8,7 @@ class AdminStudentController extends Controller
 {
     function index()
     {
-        $students=studentsQuery()->get();
+        $students=studentsQuery()->orderBy('id','DESC')->get();
         $obj=[
             'students'=>$students
         ];
@@ -30,6 +30,33 @@ class AdminStudentController extends Controller
         $student->room_no=$request->room_no;
         $student->student_id=$request->student_id;
         $student->utype='CST';
+
+        $image_key='image';
+        $image_path='storage/Students';
+        if($request->hasfile($image_key))       
+        {
+            $file=$request->file($image_key);
+            if(isImage($file))
+            {
+                $path=$image_path;
+                $image_file_name=uploadFile($file,$path);
+                if($image_file_name)
+                {
+                    $student[$image_key]=$image_file_name;
+                }
+                else
+                {
+                    return back()->with('warning','Image Uploading Failed');
+                }
+            }
+            else
+            {
+                return back()->with('warning','Uploaded image extension is not allowed');
+            }
+        }
+
+
+
         $student->save();
 
         return redirect(route('admin.students'))->with('message','Student Added Succesfully');
@@ -50,6 +77,34 @@ class AdminStudentController extends Controller
         $student->phone=$request->phone;
         $student->room_no=$request->room_no;
         $student->student_id=$request->student_id;
+
+        $image_key='image';
+        $image_path='storage/Students';
+        if($request->hasfile($image_key))       
+        {
+            $file=$request->file($image_key);
+            if(isImage($file))
+            {
+                $path=$image_path;
+                $image_file_name=uploadFile($file,$path);
+                if($image_file_name)
+                {
+                    $old_image=$student[$image_key];
+                    deleteFile($old_image);  
+                    $student[$image_key]=$image_file_name;
+                }
+                else
+                {
+                    return back()->with('warning','File Uploading Failed');
+                }
+            }
+            else
+            {
+                return back()->with('warning','Uploaded file extension is not allowed');
+            }
+        }
+
+
         $student->save();
 
         return redirect(route('admin.students'))->with('message','Student Updated Succesfully');

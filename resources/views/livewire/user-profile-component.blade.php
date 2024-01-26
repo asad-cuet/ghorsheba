@@ -34,10 +34,10 @@
                                    <div class="panel-body">
                                       <div class="row">
                                           <div class="col-md-4">
-                                              @if($user->profile->image)
-                                                <img src="{{asset('assets/images/profiles')}}/{{$user->profile->image}}" width="100%">
+                                              @if($user->image!='')
+                                                <img src="{{asset($user->image)}}" width="100%">
                                               @else
-                                                <img src="{{asset('assets/images/profiles/default.jpg')}}" width="100%">
+                                                <img src="{{defaultImage()}}" width="100%">
                                               @endif
                                           </div>
                                           <div class="col-md-8">

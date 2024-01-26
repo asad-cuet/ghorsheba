@@ -7,8 +7,14 @@
                                 <div class="thinborder-ontop">
                                     <h3>Student Info</h3>
                                     <x-jet-validation-errors class="mb-4" />
-                                    <form id="userloginform" method="POST" action="{{route('admin.students.store')}}">   
-                                        @csrf                                     
+                                    <form id="userloginform" method="POST" action="{{route('admin.students.store')}}" enctype="multipart/form-data">   
+                                        @csrf       
+                                        <div class="form-group">
+                                            <label for="image" class="col-md-4 col-form-label text-md-right">Image:</label>
+                                            <div class="col-sm-6">
+                                                 <input type="file" class="form-control-file" name="image" required>
+                                            </div>
+                                         </div>                              
                                         <div class="form-group row">
                                             <label for="email" class="col-sm-4 col-form-label text-md-right">E-Mail Address</label>
                                             <div class="col-md-6">
