@@ -56,6 +56,7 @@
                                                 <thead>
                                                     <tr>
                                                         <th>Request ID</th>
+                                                        <th>Student Image</th>
                                                         <th>Student Name</th>
                                                         <th>Student Email</th>
                                                         <th>Student Phone</th>
@@ -68,6 +69,7 @@
                                                     @foreach($orders as $order)
                                                       <tr>
                                                          <td>{{$order->id}}</td>
+                                                         <td><img src="{{asset($order->user->image?? defaultImage())}}" style="width:100px;height:auto" alt=""></td>
                                                          <td>{{$order->user->name}}</td>
                                                          <td>{{$order->user->email}}</td>
                                                          <td>{{$order->user->phone}}</td>
