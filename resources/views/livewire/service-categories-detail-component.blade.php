@@ -75,7 +75,6 @@
                                            @auth
                                                @if(Auth::user()->utype==='CST')
                                                 <div class="panel-footer">
-                                                    <h5>No Charge</h5>
                                                     <form id="userloginform" method="POST" action="{{url('/customer/book/cod/'.$scategory->id)}}" enctype="multipart/form-data">   
                                                         @csrf       
                                                         <div class="form-group">
