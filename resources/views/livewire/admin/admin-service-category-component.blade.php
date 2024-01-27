@@ -50,7 +50,7 @@
                                                     <th>Image</th>
                                                     <th>Name</th>
                                                     <th>Slug</th>
-                                                    <th>Featured</th>
+                                                    <th>is Available</th>
                                                     <th>Action</th>
                                                 </tr>
                                            </thead>
@@ -62,7 +62,7 @@
                                                      <td>{{$scategory->name}}</td>
                                                      <td>{{$scategory->slug}}</td>
                                                      <td>
-                                                         @if($scategory->featured)
+                                                         @if($scategory->is_active)
                                                          YES
                                                          @else
                                                          NO
