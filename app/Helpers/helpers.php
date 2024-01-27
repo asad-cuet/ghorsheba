@@ -140,3 +140,15 @@ function defaultImage()
     return asset("assets/images/profiles/default.jpg");
 }
 
+function isOrderCompleted($order)
+{
+    if($order->student_completed==1 && $order->provider_completed==1)
+    {
+        return 1;
+    }
+    else
+    {
+        return 0;
+    }
+}
+

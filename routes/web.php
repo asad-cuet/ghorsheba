@@ -70,6 +70,8 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified'])-
     Route::post('/customer/book/online/{id?}',[BookController::class,'online'])->name('customer.online');
     Route::get('/user/profile',UserProfileComponent::class)->name('user.profile');
     Route::get('/user/profile/edit',UserEditProfileComponent::class)->name('user.editprofile');
+    Route::get('/user/order-completed/{id?}',[HandleOrderController::class,'order_completed_student'])->name('user.order-completed');
+
 });
 
 
@@ -81,7 +83,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified','a
     Route::get('/sprovider/dashboard',SproviderDashboardComponent::class)->name('sprovider.dashboard');
     Route::get('/sprovider/profile',SproviderProfileComponent::class)->name('sprovider.profile');
     Route::get('/sprovider/profile/edit',EditSproviderProfileComponent::class)->name('sprovider.edit_profile');
-    Route::get('/sprovider/order-complete/{order_id}',[HandleOrderController::class,'provider_complete'])->name('sprovider.provider_complete');
+    Route::get('/sprovider/order-complete/{order_id}',[HandleOrderController::class,'order_completed_provider'])->name('sprovider.provider_complete');
 });
 
 //For Admin
@@ -99,7 +101,7 @@ Route::middleware(['auth:sanctum',config('jetstream.auth_session'),'verified', '
     Route::get('/admin/recent-service',OrderDetailsComponent::class)->name('admin.new-order');
     Route::get('/admin/order-view/{order_id?}',OrderViewComponent::class)->name('admin.new-view');
     Route::get('/admin/payment-accepted/{id?}',[HandleOrderController::class,'payment_accepted'])->name('admin.payment-completed');
-    Route::get('/admin/order-completed/{id?}',[HandleOrderController::class,'order_completed'])->name('admin.order-completed');
+    Route::get('/admin/order-completed/{id?}',[HandleOrderController::class,'order_completed_from_admin'])->name('admin.order-completed');
     Route::post('/admin/order-to-provider/{order_id?}',[HandleOrderController::class,'order_to_provide'])->name('admin.order-completed');
     
     Route::get('/admin/students',[AdminStudentController::class,'index'])->name('admin.students');

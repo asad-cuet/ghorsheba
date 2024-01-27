@@ -17,7 +17,7 @@ class HandleOrderController extends Controller
     }
 
 
-    public function order_completed($id) 
+    public function order_completed_from_admin($id) 
     {
         {
             $order=Order::find($id);
@@ -29,8 +29,34 @@ class HandleOrderController extends Controller
             {
                 $order->order_completed=1;
                 $order->update();
-                return back()->with('message','Order Completed');
+                return back()->with('message','Service Completed');
             }
+
+        }  
+    }
+
+    public function order_completed_provider($id) 
+    {
+        {
+            $order=Order::find($id);
+
+            $order->provider_completed=1;
+            $order->update();
+            return back()->with('message','Service Completed from Service Provider');
+
+
+        }  
+    }
+
+    public function order_completed_student($id) 
+    {
+        {
+            $order=Order::find($id);
+
+            $order->student_completed=1;
+            $order->update();
+            return back()->with('message','Service Completed from Service Provider');
+
 
         }  
     }
@@ -58,7 +84,6 @@ class HandleOrderController extends Controller
         {
             $order=Order::find($order_id);
             $order->provider_completed=1;
-            $order->order_completed=1;
             $order->update();
             return back()->with('message','Assigned Task Completed Successfully');
         }  

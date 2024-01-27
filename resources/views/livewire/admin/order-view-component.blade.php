@@ -49,9 +49,9 @@
                                        <div class="row">
                                             <div class="col-md-6">
                                                
-                                               @if($order->order_completed==0)
+                                               {{-- @if($order->order_completed==0)
                                                <a href="/admin/order-completed/{{$order->id}}" class="btn btn-primary" onclick="return confirm('Are you sure?')">Service Completed</a>
-                                               @endif
+                                               @endif --}}
                                                <h4>Is Service Provider completed this order: 
                                                     @if($order->provider_completed==0)
                                                     <span class="btn btn-danger">NO</span>
@@ -59,8 +59,15 @@
                                                     <span class="btn btn-success">Yes</span>
                                                     @endif
                                                 </h4>
+                                               <h4>Is Student got the service: 
+                                                    @if($order->student_completed==0)
+                                                    <span class="btn btn-danger">NO</span>
+                                                    @else
+                                                    <span class="btn btn-success">Yes</span>
+                                                    @endif
+                                                </h4>
                                                <h4>Is order completed: 
-                                                    @if($order->order_completed==0)
+                                                    @if(isOrderCompleted($order)==0)
                                                     <span class="btn btn-danger">NO</span>
                                                     @else
                                                     <span class="btn btn-success">Yes</span>
@@ -105,7 +112,7 @@
                                           @endif
                                           <li class="list-group-item"><b>Complain Description</b>:{{$order->description}}</li>
                                           <li class="list-group-item"><b>Service Category:</b> {{$order->service->name}}</li>
-                                          <li class="list-group-item"><b>Is Service Completed</b>:{{$order->order_completed==0 ? 'No': 'Yes'}}</li>
+                                          <li class="list-group-item"><b>Is Service Completed</b>:{{isOrderCompleted($order)==0 ? 'No': 'Yes'}}</li>
                                           <li class="list-group-item"><b>Service provided to</b>:{{$order->to_provider_id==0 ? 'No One': ' Id: '.$order->s_provider->id.' and Name: '.$order->s_provider->name}}</li>
                                           <li class="list-group-item"><b>Created Date</b>:{{date('d-m-Y',strtotime($order->created_at))}}</li>
                                           <li class="list-group-item"><b>Updated Date</b>:{{date('d-m-Y',strtotime($order->updated_at))}}</li>

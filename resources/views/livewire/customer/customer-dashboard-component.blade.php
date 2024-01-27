@@ -64,6 +64,7 @@
                                                     <th>Service Provider Phone</th>
                                                     <th>Service Completed</th>
                                                     <th>Created At</th>
+                                                    <th>Action</th>
                                                 </tr>
                                            </thead>
                                            <tbody>
@@ -76,8 +77,13 @@
                                                      <td>{{$order->service->name}}</td>
                                                      <td>{{$order?->s_provider?->name}}</td>
                                                      <td>{{$order?->s_provider?->phone}}</td>
-                                                     <td>{{$order->order_completed==0 ? 'No':'Yes'}}</td>
+                                                     <td>{{isOrderCompleted($order)==0 ? 'No':'Yes'}}</td>
                                                      <td>{{date('d-m-Y',strtotime($order->created_at))}}</td>
+                                                     <td>
+                                                        @if(!$order->student_completed)
+                                                            <a onclick="return confirm('Are you sure?')" href="/user/order-completed/{{$order->id}}" class="btn btn-primary">Got the Service</a>
+                                                        @endif
+                                                    </td>
                                                    </tr>
                                                @endforeach
                                            </tbody>
