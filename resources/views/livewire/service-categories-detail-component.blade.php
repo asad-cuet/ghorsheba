@@ -98,7 +98,7 @@
                                                 </div>
                                                 @else
                                                 <div class="panel-footer">
-                                                   <h5>Login as Customer to Make Order</h5>
+                                                   <h5>Login as Customer to Make Complain Request</h5>
                                                 </div>
                                                 @endif
                                            @else   

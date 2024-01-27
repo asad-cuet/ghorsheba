@@ -48,7 +48,7 @@ class HandleOrderController extends Controller
             {
                 $order->to_provider_id=$req->provider_user_id;
                 $order->update();
-                return back()->with('message','Order Provided to service provider succesfully');
+                return back()->with('message','Task Assigned to Service Provider Successfully');
             }
 
         }  
@@ -60,7 +60,7 @@ class HandleOrderController extends Controller
             $order->provider_completed=1;
             $order->order_completed=1;
             $order->update();
-            return back()->with('message','Order Completed Successfully');
+            return back()->with('message','Assigned Task Completed Successfully');
         }  
     }
 }

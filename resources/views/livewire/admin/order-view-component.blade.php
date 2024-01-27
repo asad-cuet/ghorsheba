@@ -25,7 +25,7 @@
                         <ul>
                             <li><a href="/">Home</a></li>
                             <li>/</li>
-                            <li>Orders</li>
+                            <li>Complain Requests</li>
                         </ul>
                     </div>
                 </div>
@@ -45,12 +45,12 @@
                                     @if(Session::has('failed'))
                                            <div class="alert alert-danger" role="alert">{{Session::get('failed')}}</div>
                                     @endif
-                                    <h4>Order View </h4>
+                                    <h4>Complain Request View </h4>
                                        <div class="row">
                                             <div class="col-md-6">
                                                
                                                @if($order->order_completed==0)
-                                               <a href="/admin/order-completed/{{$order->id}}" class="btn btn-primary" onclick="return confirm('Are you sure?')">Order Completed</a>
+                                               <a href="/admin/order-completed/{{$order->id}}" class="btn btn-primary" onclick="return confirm('Are you sure?')">Service Completed</a>
                                                @endif
                                                <h4>Is Service Provider completed this order: 
                                                     @if($order->provider_completed==0)
@@ -105,7 +105,7 @@
                                           @endif
                                           <li class="list-group-item"><b>Complain Description</b>:{{$order->description}}</li>
                                           <li class="list-group-item"><b>Service Category:</b> {{$order->service->name}}</li>
-                                          <li class="list-group-item"><b>Is Order Completed</b>:{{$order->order_completed==0 ? 'No': 'Yes'}}</li>
+                                          <li class="list-group-item"><b>Is Service Completed</b>:{{$order->order_completed==0 ? 'No': 'Yes'}}</li>
                                           <li class="list-group-item"><b>Service provided to</b>:{{$order->to_provider_id==0 ? 'No One': ' Id: '.$order->s_provider->id.' and Name: '.$order->s_provider->name}}</li>
                                           <li class="list-group-item"><b>Created Date</b>:{{date('d-m-Y',strtotime($order->created_at))}}</li>
                                           <li class="list-group-item"><b>Updated Date</b>:{{date('d-m-Y',strtotime($order->updated_at))}}</li>
